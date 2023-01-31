@@ -83,10 +83,13 @@ function Header() {
                 <Link to="/blog" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Blog</Link>
               </li>              
               {/* 1st level: hover */}
-              <Dropdown title="Resources">
+              <Dropdown title="Documentation">
                 {/* 2nd level: hover */}
                 <li>
-                  <Link to="/documentation" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Documentation</Link>
+                  <Link to="/documentation/react01" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">React</Link>
+                </li>
+                <li>
+                  <Link to="/documentation/nodejs01" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Node.js</Link>
                 </li>
                 <li>
                   <Link to="/support" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Support center</Link>
