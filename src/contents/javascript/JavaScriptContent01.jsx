@@ -1,10 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-import DocsImage01 from '../../images/docs-image-01.png';
-import DocsImage02 from '../../images/docs-image-02.png';
-
-function ReactContent02() {
+function JavaScriptContent01() {
   const [sidebarNavOpen, setSidebarNavOpen] = useState(false);
   const [sidebarLinkOpen, setSidebarLinkOpen] = useState(true);
   return (
@@ -43,16 +40,6 @@ function ReactContent02() {
                 <ul className="font-medium -my-2">
                 {/* 1st level */}
                 <li className="py-2">
-                    <a className="flex items-center hover:underline" href="/documentation/react01">
-                    <div className="flex items-center grow">
-                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 3.294L1.4 1.035C1.1.847.7.941.4 1.13c-.2.189-.4.471-.4.753v10.353c0 .377.2.753.6.847L7 15.718V3.294zM15.6 1.13c-.3-.189-.6-.189-.9-.095L9 3.295v12.423l6.4-2.542c.4-.188.6-.47.6-.847V1.882c0-.282-.2-.564-.4-.753z" />
-                        </svg>
-                        <span>Reactの基本概念を学ぶ</span>
-                    </div>
-                    </a>
-                </li>
-                <li className="py-2">
                     <a
                     className="flex items-center hover:underline"
                     href="#0"
@@ -61,9 +48,9 @@ function ReactContent02() {
                     >
                     <div className="flex items-center grow">
                         <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 4H4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1zM12 10H1c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1zM15 16H4c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1z" />
+                        <path d="M7 3.294L1.4 1.035C1.1.847.7.941.4 1.13c-.2.189-.4.471-.4.753v10.353c0 .377.2.753.6.847L7 15.718V3.294zM15.6 1.13c-.3-.189-.6-.189-.9-.095L9 3.295v12.423l6.4-2.542c.4-.188.6-.47.6-.847V1.882c0-.282-.2-.564-.4-.753z" />
                         </svg>
-                        <span>TypeScriptとReactの統合</span>
+                        <span>JavaScriptの基本構文</span>
                     </div>
                     <svg className="w-3 h-3 fill-current text-gray-400 cursor-pointer ml-1 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z" />
@@ -74,45 +61,94 @@ function ReactContent02() {
                     className={`font-normal -mb-1 mt-1 ml-2 pl-5 border-l border-gray-300 ${!sidebarLinkOpen && 'hidden'}`}
                     >
                     <li className="py-1">
-                        <a className="text-gray-600 hover:underline" href="#installation">TypeScriptのセットアップ方法</a>
+                        <a className="text-gray-600 hover:underline" href="#variable">変数</a>
                     </li>
                     <li className="py-1">
-                        <a className="text-gray-600 hover:underline" href="#quick">PropsとStateのtyping</a>
+                        <a className="text-gray-600 hover:underline" href="#type">データ型</a>
                     </li>
                     <li className="py-1">
-                        <a className="text-gray-600 hover:underline" href="#folder">関数コンポーネントとクラスコンポーネント</a>
+                        <a className="text-gray-600 hover:underline" href="#operator">演算子</a>
+                    </li>
+                    <li className="py-1">
+                        <a className="text-gray-600 hover:underline" href="#control">制御構造</a>
                     </li>
                     </ul>
                 </li>
                 <li className="py-2">
-                    <a className="flex items-center hover:underline" href="/documentation/react03">
+                    <a className="flex items-center hover:underline" href="/documentation/javascript02">
+                    <div className="flex items-center grow">
+                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 4H4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1zM12 10H1c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1zM15 16H4c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1z" />
+                        </svg>
+                        <span>DOMの概念と操作方法</span>
+                    </div>
+                    </a>
+                </li>
+                <li className="py-2">
+                    <a className="flex items-center hover:underline" href="/documentation/javascript03">
                     <div className="flex items-center grow">
                         <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6 9H1a1 1 0 01-1-1V1a1 1 0 011-1h5a1 1 0 011 1v7a1 1 0 01-1 1zM6 16H1a1 1 0 01-1-1v-3a1 1 0 011-1h5a1 1 0 011 1v3a1 1 0 01-1 1zM15 6h-5a1 1 0 01-1-1V1a1 1 0 011-1h5a1 1 0 011 1v4a1 1 0 01-1 1zM15 16h-5a1 1 0 01-1-1V9a1 1 0 011-1h5a1 1 0 011 1v6a1 1 0 01-1 1z" />
                         </svg>
-                        <span>実践的なReactアプリケーション開発</span>
+                        <span>JavaScriptによるイベント処理</span>
                     </div>
                     </a>
                 </li>
                 <li className="py-2">
-                    <a className="flex items-center hover:underline" href="/documentation/react04">
+                    <a className="flex items-center hover:underline" href="/documentation/javascript04">
                     <div className="flex items-center grow">
                         <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.5 15.414l-2.5-3V1a1 1 0 011-1h3a1 1 0 011 1v11.414l-2.5 3zM7 0H1C.4 0 0 .4 0 1v2h3v2H0v2h3v2H0v2h3v2H0v2c0 .6.4 1 1 1h6c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1z" />
                         </svg>
-                        <span>デバッグとテスト</span>
+                        <span>JavaScriptのオブジェクト指向プログラミング</span>
                     </div>
                     </a>
                 </li>
                 <li className="py-2">
-                    <a className="flex items-center hover:underline" href="/documentation/react05">
+                    <a className="flex items-center hover:underline" href="/documentation/javascript05">
                     <div className="flex items-center grow">
                         <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="4.5" cy="4.5" r="4.5" />
                         <circle cx="12" cy="13" r="3" />
                         <circle cx="14.5" cy="5.5" r="1.5" />
                         </svg>
-                        <span>アドバンストトピック</span>
+                        <span>関数型プログラミング</span>
+                    </div>
+                    </a>
+                </li>
+                <li className="py-2">
+                    <a className="flex items-center hover:underline" href="/documentation/javascript06">
+                    <div className="flex items-center grow">
+                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="4.5" cy="4.5" r="4.5" />
+                        <circle cx="12" cy="13" r="3" />
+                        <circle cx="14.5" cy="5.5" r="1.5" />
+                        </svg>
+                        <span>JavaScriptのライブラリやフレームワーク、jQueryなどの使用方法</span>
+                    </div>
+                    </a>
+                </li>
+                <li className="py-2">
+                    <a className="flex items-center hover:underline" href="/documentation/javascript07">
+                    <div className="flex items-center grow">
+                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="4.5" cy="4.5" r="4.5" />
+                        <circle cx="12" cy="13" r="3" />
+                        <circle cx="14.5" cy="5.5" r="1.5" />
+                        </svg>
+                        <span>JavaScriptによるAjax通信</span>
+                    </div>
+                    </a>
+                </li>
+                <li className="py-2">
+                    <a className="flex items-center hover:underline" href="/documentation/javascript08">
+                    <div className="flex items-center grow">
+                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="4.5" cy="4.5" r="4.5" />
+                        <circle cx="12" cy="13" r="3" />
+                        <circle cx="14.5" cy="5.5" r="1.5" />
+                        </svg>
+                        <span>JavaScriptのテストフレームワークの使用方法</span>
                     </div>
                     </a>
                 </li>
@@ -122,71 +158,47 @@ function ReactContent02() {
       </aside>
       <div className="md:grow">
         <div className="text-lg text-gray-600">
-          <h2 className="h2 text-gray-900 mb-4">TypeScriptとReactの統合</h2>
+          <h2 className="h2 text-gray-900 mb-4">JavaScriptの基本構文</h2>
           <p className="mb-8">
-            Aenean sed adipiscing diam donec <strong className="font-medium text-gray-900">adipiscing tristique risus</strong> nec feugiat auctor urna nunc id cursus metus aliquam eleifend, arcu dictum varius duis at consectetur lorem donec massa sapien, sed risus ultricies tristique nulla aliquet. <strong className="font-medium text-gray-900">Morbi tristique senectus</strong> et netus et, nibh nisl condimentum id venenatis a condimentum vitae sapien.
+            JavaScriptの基本構文には、変数、データ型、演算子、制御構造などがあります。
           </p>
-          <h3 id="installation" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>TypeScriptのセットアップ方法</h3>
+          <h3 id="variable" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>1. 変数</h3>
           <p className="mb-8">
-            Sit amet cursus sit amet dictum sit amet. Mattis pellentesque id nibh tortor id nulla aliquet porttitor lacus luctus accumsan, tortor posuere pellentesque habitant morbi tristique senectus et netus. Lacinia quis vel eros donec ac odio tempor duis ut diam quam nulla. Tellus orci ac auctor augue mauris augue.
-          </p>
-          <figure className="mb-8">
-            <img className="w-full rounded" src={DocsImage01} width="768" height="390" alt="Docs 01" />
-          </figure>
-          <p className="mb-8">
-            Sit amet cursus sit amet dictum sit amet mattis pellentesque id nibh tortor id, nulla aliquet porttitor lacus luctus accumsan tortor posuere. <strong className="font-medium text-gray-900">Pellentesque habitant morbi</strong> tristique senectus et netus, lacinia quis vel eros donec ac odio tempor. Duis ut diam quam nulla tellus orci ac auctor augue mauris augue.
-          </p>
-          <p className="flex items-center text-base px-3 py-4 text-gray-800 bg-blue-100 border border-blue-200 rounded mb-8">
-            <svg className="w-4 h-4 fill-current text-blue-500 shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 0a8 8 0 100 16A8 8 0 008 0zm2.629 11.618L8 10.236l-2.629 1.382.5-2.927-2.124-2.073 2.939-.427L8 3.528l1.314 2.663 2.939.427-2.126 2.073.502 2.927z" fill="#338CF5" fillRule="nonzero" />
-            </svg>
-            <span>Check out the <a className="text-blue-600 hover:underline" href="#0">Terms and license page</a> to know more about our license.</span>
-          </p>
-          <h3 id="quick" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>PropsとStateのtyping</h3>
-          <h4 className="h4 text-gray-900 mb-4">Customising settings</h4>
-          <p className="mb-8">
-            Orci ac auctor augue mauris augue neque gravida in sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis senectus et <a className="text-gray-900 underline" href="#0">netus et malesuada fames</a> ut faucibus pulvinar elementum integer pellentesque habitant morbi.
-          </p>
-          <figure className="mb-8">
-            <img className="w-full rounded" src={DocsImage02} width="768" height="390" alt="Docs 02" />
-          </figure>
-          <p className="mb-8">
-            Aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat auctor urna nunc id cursus metus aliquam eleifend, arcu dictum varius duis at consectetur lorem donec massa sapien, sed risus ultricies tristique nulla aliquet. Morbi tristique senectus et netus et, nibh nisl condimentum id venenatis a condimentum vitae sapien.
-          </p>
-          <p className="flex items-center text-base px-3 py-4 text-gray-800 bg-blue-100 border border-blue-200 rounded mb-8">
-            <svg className="w-4 h-4 fill-current text-blue-500 shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 0a8 8 0 100 16A8 8 0 008 0zm2.629 11.618L8 10.236l-2.629 1.382.5-2.927-2.124-2.073 2.939-.427L8 3.528l1.314 2.663 2.939.427-2.126 2.073.502 2.927z" fill="#338CF5" fillRule="nonzero" />
-            </svg>
-            <span>Learn more about <a className="text-blue-600 hover:underline" href="#0">Customising settings</a>.</span>
-          </p>
-          <h3 id="folder" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>関数コンポーネントとクラスコンポーネント</h3>
-          <p className="mb-8">
-            Aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat auctor urna nunc id cursus metus aliquam eleifend, arcu dictum varius duis at consectetur lorem donec massa sapien, sed risus ultricies tristique nulla aliquet. Morbi tristique senectus et netus et, nibh nisl condimentum id venenatis a condimentum vitae sapien.
+            JavaScriptでは、変数を使ってデータを保存します。変数はvar、let、またはconstを使って宣言します。varは古い書き方です、letはブロックスコープで、constは定数です。
           </p>
           <p className="mb-8">
-            Orci ac auctor augue mauris augue neque gravida in sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis senectus et <a className="text-gray-900 underline" href="#0">netus et malesuada fames</a> ut faucibus pulvinar elementum integer pellentesque habitant morbi.
+            コードは後日記載。
           </p>
-          <p>
-            For more information on what to do next, we recommend the following articles:
+          <h3 id="type" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>2. データ型</h3>
+          <p className="mb-8">
+            JavaScriptには、プリミティブ型とオブジェクト型の2つのデータ型があります。プリミティブ型には、数値、文字列、ブーリアン、null、undefinedなどがあります。オブジェクト型には、配列、関数、日付などがあります。
+          </p>
+          <p className="mb-8">
+            コードは後日記載。
+          </p>
+          <h3 id="operator" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>3. 演算子</h3>
+          <p className="mb-8">
+            JavaScriptには、算術演算子、比較演算子、論理演算子、代入演算子などがあります。例えば、+演算子は加算を行います。==演算子は値の比較を行います。
+          </p>
+          <p className="mb-8">
+            コードは後日記載。
+          </p>
+          <h3 id="control" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>4. 制御構造</h3>
+          <p className="mb-8">
+            JavaScriptには、if文、for文、while文、switch文などがあります。これらの構造は、条件に応じて処理を分岐させるために使用します。
+          </p>
+          <p className="mb-8">
+            コードは後日記載。
           </p>
         </div>
 
         {/* Related content */}
         <div className="mt-8">
           <h3 className="h3 mb-8">関連記事</h3>
-          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="#0">
+          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript02">
             <div>
-              <div className="text-normal font-medium mb-1">Reactの基本概念を学ぶ</div>
-              <div className="text-sm text-gray-600">Learn more about orci ac auctor augue mauris augue neque gravida.</div>
-            </div>
-            <svg className="w-4 h-4 fill-current text-blue-600 shrink-0 ml-6" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
-            </svg>
-          </a>
-          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="#0">
-            <div>
-              <div className="text-normal font-medium mb-1">実践的なReactアプリケーション開発</div>
-              <div className="text-sm text-gray-600">Learn more about risus nullam eget felis eget nunc.</div>
+              <div className="text-normal font-medium mb-1">DOMの概念と操作方法</div>
+              <div className="text-sm text-gray-600">次のページ</div>
             </div>
             <svg className="w-4 h-4 fill-current text-blue-600 shrink-0 ml-6" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
               <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
@@ -248,4 +260,4 @@ function ReactContent02() {
   );
 }
 
-export default ReactContent02;
+export default JavaScriptContent01;

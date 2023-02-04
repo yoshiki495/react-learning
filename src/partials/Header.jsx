@@ -86,10 +86,19 @@ function Header() {
               <Dropdown title="Documentation">
                 {/* 2nd level: hover */}
                 <li>
-                  <Link to="/documentation/react01" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">React</Link>
+                  <Link to="/documentation/javascript01" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">JavaScript</Link>
                 </li>
                 <li>
                   <Link to="/documentation/nodejs01" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Node.js</Link>
+                </li>
+                <li>
+                  <Link to="/documentation/typescript01" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">TypeScript</Link>
+                </li>
+                <li>
+                  <Link to="/documentation/react01" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">React</Link>
+                </li>
+                <li>
+                  <Link to="/documentation/nextjs01" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Next.js</Link>
                 </li>
                 <li>
                   <Link to="/support" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Support center</Link>
