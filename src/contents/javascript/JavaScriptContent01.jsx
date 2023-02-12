@@ -1,9 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
+import { Text } from '@vercel/examples-ui'
+import Chat from '../../partials/Chat';
 
 function JavaScriptContent01() {
   const [sidebarNavOpen, setSidebarNavOpen] = useState(false);
   const [sidebarLinkOpen, setSidebarLinkOpen] = useState(true);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="md:flex md:justify-between" data-sticky-container>
       <aside className="relative my-12 md:my-0 md:w-64 md:mr-12 lg:mr-20 md:shrink-0">
@@ -210,7 +214,41 @@ function JavaScriptContent01() {
         {/* Feedback */}
         <div className="pt-6">
           <div className="flex flex-col text-center sm:text-left sm:flex-row sm:justify-between sm:items-center">
-            <div className="font-medium mb-4 md:mb-0">Was this page helpful?</div>
+            <button 
+              aria-label="Open Modal"
+              type="button"
+              className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+              onClick={() => setIsModalOpen(true)}>
+              AIに質問する
+            </button>
+            {isModalOpen && (
+                <div className="fixed bottom-0 inset-x-0 px-4 pb-6 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center z-10">
+                    <div className="fixed inset-0 transition-opacity">
+                    <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
+                    </div>
+                    <div className="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-3xl sm:w-full fadeIn" style={{ overflowY: 'auto' }}>
+                    <div className="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                        <section className="flex flex-col gap-3 w-full justify-center items-center">
+                            <Text variant="h2" className="text-xl font-bold text-center">AI Chat Bot</Text>
+                            <div className="w-full rounded-lg shadow-lg bg-white p-4">
+                            <Chat />
+                            </div>
+                        </section>
+                    </div>
+                    <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                        <span className="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
+                        <button
+                            type="button"
+                            className="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-red-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red sm:text-sm sm:leading-5"
+                            onClick={() => setIsModalOpen(false)}
+                        >
+                            Close
+                        </button>
+                        </span>
+                    </div>
+                    </div>
+                </div>
+            )}
             <ul className="inline-flex justify-center -m-2">
               <li className="p-2">
                 <a href="#0" title="No, at all">
