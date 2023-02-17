@@ -8,6 +8,97 @@ function JavaScriptContent01() {
   const [sidebarLinkOpen, setSidebarLinkOpen] = useState(true);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const code01 = `function helloWorld() {
+  console.log("Hello, World!");
+}
+helloWorld();
+`
+
+  const code02 = `// 数値
+let x = 5;
+console.log(typeof x);  // "number"
+
+// 文字列
+let y = "hello";
+console.log(typeof y);  // "string"
+
+// ブーリアン
+let z = true;
+console.log(typeof z);  // "boolean"
+
+// null
+let a = null;
+console.log(typeof a);  // "object"
+
+// 配列
+let b = [1, 2, 3];
+console.log(typeof b);  // "object"
+
+//関数
+function add(a,b){
+  return a+b;
+}
+console.log(typeof add);  // "function"`
+
+  const code03 = `// 算術演算子
+let a = 5;
+let b = 2;
+console.log(a + b);  // 7
+console.log(a - b);  // 3
+console.log(a * b);  // 10
+console.log(a / b);  // 2.5
+
+// 比較演算子
+let c = 5;
+let d = 2;
+console.log(c == d);  // false
+console.log(c != d);  // true
+console.log(c > d);  // true
+console.log(c < d);  // false
+
+// 論理演算子
+let e = true;
+let f = false;
+console.log(e && f);  // false
+console.log(e || f);  // true
+console.log(!e);  // false`
+
+  const code04 = `// if文
+let age = 25;
+if (age > 18) {
+  console.log("成年です。");
+}
+
+// for文
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+
+// while文
+let j = 0;
+while (j < 5) {
+  console.log(j);
+  j++;
+}
+
+// switch文
+let day = 3;
+switch (day) {
+  case 1:
+    console.log("Monday");
+    break;
+  case 2:
+    console.log("Tuesday");
+    break;
+  case 3:
+    console.log("Wednesday");
+    break;
+  default:
+    console.log("Invalid day");
+    break;
+}`
+
   return (
     <div className="md:flex md:justify-between" data-sticky-container>
       <aside className="relative my-12 md:my-0 md:w-64 md:mr-12 lg:mr-20 md:shrink-0">
@@ -171,28 +262,28 @@ function JavaScriptContent01() {
             JavaScriptでは、変数を使ってデータを保存します。変数はvar、let、またはconstを使って宣言します。varは古い書き方です、letはブロックスコープで、constは定数です。
           </p>
           <p className="mb-8">
-            コードは後日記載。
+            <pre>{code01}</pre>
           </p>
           <h3 id="type" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>2. データ型</h3>
           <p className="mb-8">
             JavaScriptには、プリミティブ型とオブジェクト型の2つのデータ型があります。プリミティブ型には、数値、文字列、ブーリアン、null、undefinedなどがあります。オブジェクト型には、配列、関数、日付などがあります。
           </p>
           <p className="mb-8">
-            コードは後日記載。
+            <pre>{code02}</pre>
           </p>
           <h3 id="operator" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>3. 演算子</h3>
           <p className="mb-8">
             JavaScriptには、算術演算子、比較演算子、論理演算子、代入演算子などがあります。例えば、+演算子は加算を行います。==演算子は値の比較を行います。
           </p>
           <p className="mb-8">
-            コードは後日記載。
+            <pre>{code03}</pre>
           </p>
           <h3 id="control" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>4. 制御構造</h3>
           <p className="mb-8">
             JavaScriptには、if文、for文、while文、switch文などがあります。これらの構造は、条件に応じて処理を分岐させるために使用します。
           </p>
           <p className="mb-8">
-            コードは後日記載。
+            <pre>{code04}</pre>
           </p>
         </div>
 
