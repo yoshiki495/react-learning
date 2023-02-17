@@ -81,7 +81,10 @@ function Header() {
               </li>
               <li>
                 <Link to="/blog" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Blog</Link>
-              </li>              
+              </li>    
+              <li>
+                <Link to="/trial" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Trial</Link>
+              </li>           
               {/* 1st level: hover */}
               <Dropdown title="Documentation">
                 {/* 2nd level: hover */}

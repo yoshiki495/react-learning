@@ -17,6 +17,7 @@ import Pricing from './pages/Pricing';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import About from './pages/About';
+import Trial from './pages/Trial';
 import Documentation from './pages/Documentation';
 import Help from './pages/Support';
 import SignIn from './pages/SignIn';
@@ -54,6 +55,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog-post" element={<BlogPost />} />
         <Route path="/about" element={<About />} />
+        <Route path="/trial" element={<Trial />} />
         <Route path="/documentation/:content" element={<Documentation />} />
         <Route path="/support" element={<Help />} />
         <Route path="/signin" element={<SignIn />} />
