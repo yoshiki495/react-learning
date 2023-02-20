@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { ReactTerminal, TerminalContextProvider } from "react-terminal";
 
 function TerminalComponent() {
