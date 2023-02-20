@@ -1,9 +1,30 @@
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function JavaScriptContent04() {
   const [sidebarNavOpen, setSidebarNavOpen] = useState(false);
   const [sidebarLinkOpen, setSidebarLinkOpen] = useState(true);
+
+  const navigate = useNavigate();
+
+  const code01 = `function add(a, b) {
+  return a + b;
+}`
+  const code02 = `var result = add(1, 2); // 3`
+  const code03 = `var global_var = 10; // グローバルスコープ
+function myFunction() {
+  var local_var = 20; // ローカルスコープ
+}`
+  const code04 = `var a = 10; // グローバルスコープ
+function myFunction() {
+  var b = 20; // ローカルスコープ
+  console.log(a); // グローバルスコープの変数にアクセスできる
+  console.log(b); // ローカルスコープの変数にアクセスできる
+}
+console.log(a); // グローバルスコープの変数にアクセスできる
+console.log(b); // ローカルスコープの変数にアクセスできない`
+
   return (
     <div className="md:flex md:justify-between" data-sticky-container>
       <aside className="relative my-12 md:my-0 md:w-64 md:mr-12 lg:mr-20 md:shrink-0">
@@ -40,6 +61,36 @@ function JavaScriptContent04() {
                 <ul className="font-medium -my-2">
                 {/* 1st level */}
                 <li className="py-2">
+                    <a className="flex items-center hover:underline" href="/documentation/javascript01">
+                    <div className="flex items-center grow">
+                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 3.294L1.4 1.035C1.1.847.7.941.4 1.13c-.2.189-.4.471-.4.753v10.353c0 .377.2.753.6.847L7 15.718V3.294zM15.6 1.13c-.3-.189-.6-.189-.9-.095L9 3.295v12.423l6.4-2.542c.4-.188.6-.47.6-.847V1.882c0-.282-.2-.564-.4-.753z" />
+                        </svg>
+                        <span>変数、データ型、演算子</span>
+                    </div>
+                    </a>
+                </li>
+                <li className="py-2">
+                    <a className="flex items-center hover:underline" href="/documentation/javascript02">
+                    <div className="flex items-center grow">
+                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 4H4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1zM12 10H1c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1zM15 16H4c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1z" />
+                        </svg>
+                        <span>制御構造</span>
+                    </div>
+                    </a>
+                </li>
+                <li className="py-2">
+                    <a className="flex items-center hover:underline" href="/documentation/javascript03">
+                    <div className="flex items-center grow">
+                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9H1a1 1 0 01-1-1V1a1 1 0 011-1h5a1 1 0 011 1v7a1 1 0 01-1 1zM6 16H1a1 1 0 01-1-1v-3a1 1 0 011-1h5a1 1 0 011 1v3a1 1 0 01-1 1zM15 6h-5a1 1 0 01-1-1V1a1 1 0 011-1h5a1 1 0 011 1v4a1 1 0 01-1 1zM15 16h-5a1 1 0 01-1-1V9a1 1 0 011-1h5a1 1 0 011 1v6a1 1 0 01-1 1z" />
+                        </svg>
+                        <span>配列、オブジェクト</span>
+                    </div>
+                    </a>
+                </li>
+                <li className="py-2">
                     <a
                     className="flex items-center hover:underline"
                     href="#0"
@@ -48,9 +99,9 @@ function JavaScriptContent04() {
                     >
                     <div className="flex items-center grow">
                         <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 3.294L1.4 1.035C1.1.847.7.941.4 1.13c-.2.189-.4.471-.4.753v10.353c0 .377.2.753.6.847L7 15.718V3.294zM15.6 1.13c-.3-.189-.6-.189-.9-.095L9 3.295v12.423l6.4-2.542c.4-.188.6-.47.6-.847V1.882c0-.282-.2-.564-.4-.753z" />
+                        <path d="M13.5 15.414l-2.5-3V1a1 1 0 011-1h3a1 1 0 011 1v11.414l-2.5 3zM7 0H1C.4 0 0 .4 0 1v2h3v2H0v2h3v2H0v2h3v2H0v2c0 .6.4 1 1 1h6c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1z" />
                         </svg>
-                        <span>Reactの基本概念を学ぶ</span>
+                        <span>関数、スコープ</span>
                     </div>
                     <svg className="w-3 h-3 fill-current text-gray-400 cursor-pointer ml-1 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z" />
@@ -60,56 +111,23 @@ function JavaScriptContent04() {
                     <ul
                     className={`font-normal -mb-1 mt-1 ml-2 pl-5 border-l border-gray-300 ${!sidebarLinkOpen && 'hidden'}`}
                     >
-                    <li className="py-1">
-                        <a className="text-gray-600 hover:underline" href="#react">Reactとは何か</a>
-                    </li>
-                    <li className="py-1">
-                        <a className="text-gray-600 hover:underline" href="#jsx">JSXとは何か</a>
-                    </li>
-                    <li className="py-1">
-                        <a className="text-gray-600 hover:underline" href="#virtualdom">Virtual DOMとは何か</a>
-                    </li>
+                      <li className="py-1">
+                          <a className="text-gray-600 hover:underline" href="#function">関数</a>
+                      </li>
+                      <li className="py-1">
+                          <a className="text-gray-600 hover:underline" href="#scope">スコープ</a>
+                      </li>
                     </ul>
                 </li>
                 <li className="py-2">
-                    <a className="flex items-center hover:underline" href="/documentation/react02">
-                    <div className="flex items-center grow">
-                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 4H4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1zM12 10H1c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1zM15 16H4c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1z" />
-                        </svg>
-                        <span>TypeScriptとReactの統合</span>
-                    </div>
-                    </a>
-                </li>
-                <li className="py-2">
-                    <a className="flex items-center hover:underline" href="/documentation/react03">
-                    <div className="flex items-center grow">
-                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 9H1a1 1 0 01-1-1V1a1 1 0 011-1h5a1 1 0 011 1v7a1 1 0 01-1 1zM6 16H1a1 1 0 01-1-1v-3a1 1 0 011-1h5a1 1 0 011 1v3a1 1 0 01-1 1zM15 6h-5a1 1 0 01-1-1V1a1 1 0 011-1h5a1 1 0 011 1v4a1 1 0 01-1 1zM15 16h-5a1 1 0 01-1-1V9a1 1 0 011-1h5a1 1 0 011 1v6a1 1 0 01-1 1z" />
-                        </svg>
-                        <span>実践的なReactアプリケーション開発</span>
-                    </div>
-                    </a>
-                </li>
-                <li className="py-2">
-                    <a className="flex items-center hover:underline" href="/documentation/react04">
-                    <div className="flex items-center grow">
-                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13.5 15.414l-2.5-3V1a1 1 0 011-1h3a1 1 0 011 1v11.414l-2.5 3zM7 0H1C.4 0 0 .4 0 1v2h3v2H0v2h3v2H0v2h3v2H0v2c0 .6.4 1 1 1h6c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1z" />
-                        </svg>
-                        <span>デバッグとテスト</span>
-                    </div>
-                    </a>
-                </li>
-                <li className="py-2">
-                    <a className="flex items-center hover:underline" href="/documentation/react05">
+                    <a className="flex items-center hover:underline" href="/documentation/javascript05">
                     <div className="flex items-center grow">
                         <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="4.5" cy="4.5" r="4.5" />
                         <circle cx="12" cy="13" r="3" />
                         <circle cx="14.5" cy="5.5" r="1.5" />
                         </svg>
-                        <span>アドバンストトピック</span>
+                        <span>コールバック、プロミス、非同期処理</span>
                     </div>
                     </a>
                 </li>
@@ -119,67 +137,66 @@ function JavaScriptContent04() {
       </aside>
       <div className="md:grow">
         <div className="text-lg text-gray-600">
-          <h2 className="h2 text-gray-900 mb-4">Reactの基本概念を学ぶ</h2>
-          <p className="mb-8">
-            Aenean sed adipiscing diam donec <strong className="font-medium text-gray-900">adipiscing tristique risus</strong> nec feugiat auctor urna nunc id cursus metus aliquam eleifend, arcu dictum varius duis at consectetur lorem donec massa sapien, sed risus ultricies tristique nulla aliquet. <strong className="font-medium text-gray-900">Morbi tristique senectus</strong> et netus et, nibh nisl condimentum id venenatis a condimentum vitae sapien.
+          <h2 className="h2 text-gray-900 mb-4">関数、スコープ</h2>
+          <p className="mb-12">
+            この項目では、JavaScriptでの関数の定義方法、呼び出し方、スコープについて学習します。関数は、一定の処理をまとめて名前をつけ、何度も使いまわすことができる機能であり、JavaScriptを使いこなすためには欠かせない要素です。
           </p>
-          <h3 id="react" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>Reactとは何か</h3>
-          <p className="mb-8">
-            Reactは、Facebookが開発したJavaScriptの<strong className="font-semibold text-gray-900">ライブラリ</strong>であり、Webアプリケーションを構築するためのUI部品を提供します。
+          <h3 id="function" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>関数</h3>
+          <p className="mb-4">
+            関数とは、特定の処理をまとめて、それを何度も使いまわすことができるようにしたものです。JavaScriptにおいては、以下のようにfunctionを使って関数を宣言します。
           </p>
-          <p className="mb-8">
-            Reactは、コンポーネントという単位でUIを構築し、それらを組み合わせることで複雑なアプリケーションを作成することができます。
+          <p className="mb-4">
+            <pre>{code01}</pre>
           </p>
-          <p className="mb-8">
-            また、ReactはVirtual DOMという仕組みを持っており、これにより、UIの更新を高速かつ効率的に行うことができます。
+          <p className="mb-4">
+            この場合、addという関数が定義されており、引数としてaとbを取り、それらを足し算した結果をreturn文で返します。関数を呼び出すには、以下のように関数名に引数を渡します。
           </p>
-          <p className="mb-8">
-            Reactは、JavaScriptのみでなく、TypeScriptなどの他の言語とも統合することができます。
+          <p className="mb-12">
+            <pre>{code02}</pre>
           </p>
-          <h3 id="jsx" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>JSXとは何か</h3>
-          <p className="mb-8">
-            JSXは、JavaScriptの拡張文法で、Reactにおいてコンポーネントを定義するために使用されます。JSXは、HTMLのような構文をJavaScriptの中に埋め込むことができ、Reactコンポーネントを定義する際に使用します。
+          <h3 id="scope" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>スコープ</h3>
+          <p className="mb-4">
+            スコープとは、変数や関数などが有効な範囲のことを表します。JavaScriptにおいては、以下のようにグローバルスコープとローカルスコープがあります。
           </p>
-          <p className="mb-8">
-            JSXの使用方法は簡単で、Reactコンポーネントを定義するために、JavaScriptの関数やクラスを使用します。これらの関数やクラスの中に、JSXを記述します。
+          <p className="mb-4">
+            <ul className="list-disc pl-8">
+              <li>グローバルスコープ : 関数の外側で宣言された変数や関数が有効なスコープです。</li>
+              <li>ローカルスコープ : 関数の中で宣言された変数や関数が有効なスコープです。</li>
+            </ul>
           </p>
-          <p className="mb-8">
-            JSXは、Reactにおいて、コンポーネントのレンダリングを行うために必要であり、 Reactアプリケーションの開発において必要不可欠な要素となっています。
+          <p className="mb-4">
+            以下のように、グローバルスコープとローカルスコープを使って変数を宣言することができます。
           </p>
-          <p className="mb-8">
-            ただし、JSXはブラウザが直接認識できないため、開発時にはトランスパイラー(Babelなど)を使用してJSXをJavaScriptに変換しなければなりません。
+          <p className="mb-12">
+            <pre>{code03}</pre>
           </p>
-          <h3 id="jsx" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>Virtual DOMとは何か</h3>
-          <p className="mb-8">
-          Virtual DOMは、Reactにおいて、実際のDOM(Document Object Model)とは別に、仮想のDOMを管理する仕組みです。
+          <p className="mb-4">
+            グローバルスコープで宣言された変数は、どこからでもアクセスできます。一方、ローカルスコープで宣言された変数は、その関数内でしかアクセスできません。
           </p>
-          <p className="mb-8">
-          実際のDOMは、ブラウザ上に表示されるWebページを構成する要素のツリー構造を表します。しかし、Webページを更新するたびに、実際のDOMを更新するのは時間がかかり、パフォーマンスに影響を与えます。
+          <p className="mb-4">
+            以下の例では、setTimeout関数を使って非同期で処理を行っています。この処理は、指定した時間が経過した後に実行されます。
           </p>
-          <p className="mb-8">
-          そこで、ReactはVirtual DOMを採用し、実際のDOMとは別に、仮想のDOMを管理します。Virtual DOMは、実際のDOMと同じ構造を持ち、実際のDOMと同様に更新することができます。
-          </p>
-          <p className="mb-8">
-          Reactは、Virtual DOMを使用して、コンポーネントのステートが変更された際に、Virtual DOMと実際のDOMを比較し、必要な部分だけを実際のDOMに反映します。これにより、実際のDOMを更新する回数を減らし、パフォーマンスを向上させることができます。
+          <p className="mb-4">
+            <pre>{code04}</pre>
           </p>
         </div>
 
         {/* Related content */}
         <div className="mt-8">
-          <h3 className="h3 mb-8">Related</h3>
-          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="#0">
+          <h3 className="h3 mb-8">関連記事</h3>
+          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript02">
             <div>
-              <div className="text-normal font-medium mb-1">Folder components</div>
-              <div className="text-sm text-gray-600">Learn more about orci ac auctor augue mauris augue neque gravida.</div>
+              <div className="text-normal font-medium mb-1">配列、オブジェクト</div>
+              <div className="text-sm text-gray-600">前の章</div>
             </div>
             <svg className="w-4 h-4 fill-current text-blue-600 shrink-0 ml-6" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
               <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
             </svg>
           </a>
-          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="#0">
+          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript02">
             <div>
-              <div className="text-normal font-medium mb-1">Deploy hooks</div>
-              <div className="text-sm text-gray-600">Learn more about risus nullam eget felis eget nunc.</div>
+              <div className="text-normal font-medium mb-1">コールバック関数、プロミス、非同期処理</div>
+              <div className="text-sm text-gray-600">次の章</div>
             </div>
             <svg className="w-4 h-4 fill-current text-blue-600 shrink-0 ml-6" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
               <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
@@ -191,7 +208,13 @@ function JavaScriptContent04() {
         {/* Feedback */}
         <div className="pt-6">
           <div className="flex flex-col text-center sm:text-left sm:flex-row sm:justify-between sm:items-center">
-            <div className="font-medium mb-4 md:mb-0">Was this page helpful?</div>
+            <button 
+              aria-label="Open Modal"
+              type="button"
+              className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+              onClick={() => navigate('/trial') }>
+              問題に挑戦する
+            </button>
             <ul className="inline-flex justify-center -m-2">
               <li className="p-2">
                 <a href="#0" title="No, at all">

@@ -1,103 +1,30 @@
 import React from 'react';
 import { useState } from 'react';
-import { Text } from '@vercel/examples-ui'
-import Chat from '../../partials/Chat';
+import { useNavigate } from 'react-router-dom';
 
 function JavaScriptContent01() {
   const [sidebarNavOpen, setSidebarNavOpen] = useState(false);
   const [sidebarLinkOpen, setSidebarLinkOpen] = useState(true);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const code01 = `function helloWorld() {
-  console.log("Hello, World!");
-}
-helloWorld();
+  const code01 = `var x = 10;
+let y = "Hello";
+const z = true;
 `
 
-  const code02 = `// 数値
-let x = 5;
-console.log(typeof x);  // "number"
+  const code02 = `var a = "Hello"; // 文字列型
+var b = 10; // 数値型
+var c = true; // 真偽値型
+var d = [1, 2, 3]; // 配列型
+var e = {name: "Alice", age: 20}; // オブジェクト型`
 
-// 文字列
-let y = "hello";
-console.log(typeof y);  // "string"
-
-// ブーリアン
-let z = true;
-console.log(typeof z);  // "boolean"
-
-// null
-let a = null;
-console.log(typeof a);  // "object"
-
-// 配列
-let b = [1, 2, 3];
-console.log(typeof b);  // "object"
-
-//関数
-function add(a,b){
-  return a+b;
-}
-console.log(typeof add);  // "function"`
-
-  const code03 = `// 算術演算子
-let a = 5;
-let b = 2;
-console.log(a + b);  // 7
-console.log(a - b);  // 3
-console.log(a * b);  // 10
-console.log(a / b);  // 2.5
-
-// 比較演算子
-let c = 5;
-let d = 2;
-console.log(c == d);  // false
-console.log(c != d);  // true
-console.log(c > d);  // true
-console.log(c < d);  // false
-
-// 論理演算子
-let e = true;
-let f = false;
-console.log(e && f);  // false
-console.log(e || f);  // true
-console.log(!e);  // false`
-
-  const code04 = `// if文
-let age = 25;
-if (age > 18) {
-  console.log("成年です。");
-}
-
-// for文
-for (let i = 0; i < 5; i++) {
-  console.log(i);
-}
-
-// while文
-let j = 0;
-while (j < 5) {
-  console.log(j);
-  j++;
-}
-
-// switch文
-let day = 3;
-switch (day) {
-  case 1:
-    console.log("Monday");
-    break;
-  case 2:
-    console.log("Tuesday");
-    break;
-  case 3:
-    console.log("Wednesday");
-    break;
-  default:
-    console.log("Invalid day");
-    break;
-}`
+  const code03 = `var a = 10;
+var b = 5;
+var c = a + b; // 加算演算子を使ってaとbを足し算した結果をcに代入する
+var d = a > b; // 大なり演算子を使ってaがbより大きいかどうかを判定し、結果をdに代入する
+var e = true;
+var f = !e; // 否定演算子`
 
   return (
     <div className="md:flex md:justify-between" data-sticky-container>
@@ -145,7 +72,7 @@ switch (day) {
                         <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 3.294L1.4 1.035C1.1.847.7.941.4 1.13c-.2.189-.4.471-.4.753v10.353c0 .377.2.753.6.847L7 15.718V3.294zM15.6 1.13c-.3-.189-.6-.189-.9-.095L9 3.295v12.423l6.4-2.542c.4-.188.6-.47.6-.847V1.882c0-.282-.2-.564-.4-.753z" />
                         </svg>
-                        <span>JavaScriptの基本構文</span>
+                        <span>変数、データ型、演算子</span>
                     </div>
                     <svg className="w-3 h-3 fill-current text-gray-400 cursor-pointer ml-1 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z" />
@@ -155,18 +82,15 @@ switch (day) {
                     <ul
                     className={`font-normal -mb-1 mt-1 ml-2 pl-5 border-l border-gray-300 ${!sidebarLinkOpen && 'hidden'}`}
                     >
-                    <li className="py-1">
-                        <a className="text-gray-600 hover:underline" href="#variable">変数</a>
-                    </li>
-                    <li className="py-1">
-                        <a className="text-gray-600 hover:underline" href="#type">データ型</a>
-                    </li>
-                    <li className="py-1">
-                        <a className="text-gray-600 hover:underline" href="#operator">演算子</a>
-                    </li>
-                    <li className="py-1">
-                        <a className="text-gray-600 hover:underline" href="#control">制御構造</a>
-                    </li>
+                      <li className="py-1">
+                          <a className="text-gray-600 hover:underline" href="#variable">変数</a>
+                      </li>
+                      <li className="py-1">
+                          <a className="text-gray-600 hover:underline" href="#type">データ型</a>
+                      </li>
+                      <li className="py-1">
+                          <a className="text-gray-600 hover:underline" href="#operator">演算子</a>
+                      </li>
                     </ul>
                 </li>
                 <li className="py-2">
@@ -175,7 +99,7 @@ switch (day) {
                         <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15 4H4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1zM12 10H1c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1zM15 16H4c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1z" />
                         </svg>
-                        <span>DOMの概念と操作方法</span>
+                        <span>制御構造</span>
                     </div>
                     </a>
                 </li>
@@ -185,7 +109,7 @@ switch (day) {
                         <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6 9H1a1 1 0 01-1-1V1a1 1 0 011-1h5a1 1 0 011 1v7a1 1 0 01-1 1zM6 16H1a1 1 0 01-1-1v-3a1 1 0 011-1h5a1 1 0 011 1v3a1 1 0 01-1 1zM15 6h-5a1 1 0 01-1-1V1a1 1 0 011-1h5a1 1 0 011 1v4a1 1 0 01-1 1zM15 16h-5a1 1 0 01-1-1V9a1 1 0 011-1h5a1 1 0 011 1v6a1 1 0 01-1 1z" />
                         </svg>
-                        <span>JavaScriptによるイベント処理</span>
+                        <span>配列、オブジェクト</span>
                     </div>
                     </a>
                 </li>
@@ -195,7 +119,7 @@ switch (day) {
                         <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.5 15.414l-2.5-3V1a1 1 0 011-1h3a1 1 0 011 1v11.414l-2.5 3zM7 0H1C.4 0 0 .4 0 1v2h3v2H0v2h3v2H0v2h3v2H0v2c0 .6.4 1 1 1h6c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1z" />
                         </svg>
-                        <span>JavaScriptのオブジェクト指向プログラミング</span>
+                        <span>関数、スコープ</span>
                     </div>
                     </a>
                 </li>
@@ -207,43 +131,7 @@ switch (day) {
                         <circle cx="12" cy="13" r="3" />
                         <circle cx="14.5" cy="5.5" r="1.5" />
                         </svg>
-                        <span>関数型プログラミング</span>
-                    </div>
-                    </a>
-                </li>
-                <li className="py-2">
-                    <a className="flex items-center hover:underline" href="/documentation/javascript06">
-                    <div className="flex items-center grow">
-                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="4.5" cy="4.5" r="4.5" />
-                        <circle cx="12" cy="13" r="3" />
-                        <circle cx="14.5" cy="5.5" r="1.5" />
-                        </svg>
-                        <span>JavaScriptのライブラリやフレームワーク、jQueryなどの使用方法</span>
-                    </div>
-                    </a>
-                </li>
-                <li className="py-2">
-                    <a className="flex items-center hover:underline" href="/documentation/javascript07">
-                    <div className="flex items-center grow">
-                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="4.5" cy="4.5" r="4.5" />
-                        <circle cx="12" cy="13" r="3" />
-                        <circle cx="14.5" cy="5.5" r="1.5" />
-                        </svg>
-                        <span>JavaScriptによるAjax通信</span>
-                    </div>
-                    </a>
-                </li>
-                <li className="py-2">
-                    <a className="flex items-center hover:underline" href="/documentation/javascript08">
-                    <div className="flex items-center grow">
-                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="4.5" cy="4.5" r="4.5" />
-                        <circle cx="12" cy="13" r="3" />
-                        <circle cx="14.5" cy="5.5" r="1.5" />
-                        </svg>
-                        <span>JavaScriptのテストフレームワークの使用方法</span>
+                        <span>コールバック、プロミス、非同期処理</span>
                     </div>
                     </a>
                 </li>
@@ -253,37 +141,58 @@ switch (day) {
       </aside>
       <div className="md:grow">
         <div className="text-lg text-gray-600">
-          <h2 className="h2 text-gray-900 mb-4">JavaScriptの基本構文</h2>
-          <p className="mb-8">
-            JavaScriptの基本構文には、変数、データ型、演算子、制御構造などがあります。
+          <h2 className="h2 text-gray-900 mb-4">変数、データ型、演算子</h2>
+          <p className="mb-4">
+            このコースでは、変数、データ型、演算子などの基本的な概念から始め、制御構造（条件分岐、ループ）、配列、オブジェクト、関数、スコープ、コールバック、プロミス、非同期処理など、JavaScriptにおける重要なトピックを扱います。
           </p>
-          <h3 id="variable" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>1. 変数</h3>
-          <p className="mb-8">
-            JavaScriptでは、変数を使ってデータを保存します。変数はvar、let、またはconstを使って宣言します。varは古い書き方です、letはブロックスコープで、constは定数です。
+          <p className="mb-12">
+            これらのトピックを理解することで、より複雑なアプリケーションやウェブサイトの開発に取り組むことができます。
           </p>
-          <p className="mb-8">
+          <h3 id="variable" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>変数</h3>
+          <p className="mb-4">
+            変数とは、プログラムで扱うデータを一時的に格納するための入れ物のようなものです。変数には名前をつけて、その名前を使ってデータを取り出すことができます。
+          </p>
+          <p className="mb-4">
+            変数を宣言するには、<strong>var</strong>、<strong>let</strong>、<strong>const</strong>のいずれかのキーワードを使います。例えば、以下のように変数を宣言することができます。
+          </p>
+          <p className="mb-12">
             <pre>{code01}</pre>
           </p>
-          <h3 id="type" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>2. データ型</h3>
-          <p className="mb-8">
-            JavaScriptには、プリミティブ型とオブジェクト型の2つのデータ型があります。プリミティブ型には、数値、文字列、ブーリアン、null、undefinedなどがあります。オブジェクト型には、配列、関数、日付などがあります。
+          <h3 id="type" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>データ型</h3>
+          <p className="mb-4">
+            データ型とは、変数が格納できるデータの種類を表します。JavaScriptには以下のようなデータ型があります。
           </p>
-          <p className="mb-8">
+          <p className="mb-4">
+            <ul className="list-disc pl-8">
+              <li>文字列（String）: 文字の並びを表します。</li>
+              <li>数値（Number）: 整数や小数を表します。</li>
+              <li>真偽値（Boolean）: <strong>true</strong> または <strong>false</strong> を表します。</li>
+              <li>配列（Array）: 複数のデータを順序付けて格納することができます。</li>
+              <li>オブジェクト（Object）: 関連するデータをまとめたものです。</li>
+            </ul>
+          </p>
+          <p className="mb-4">
+            以下のように、変数にデータを代入する際に、そのデータの型が自動的に判定されます。
+          </p>
+          <p className="mb-12">
             <pre>{code02}</pre>
           </p>
-          <h3 id="operator" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>3. 演算子</h3>
-          <p className="mb-8">
-            JavaScriptには、算術演算子、比較演算子、論理演算子、代入演算子などがあります。例えば、+演算子は加算を行います。==演算子は値の比較を行います。
+          <h3 id="operator" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>演算子</h3>
+          <p className="mb-4">
+            演算子とは、データを操作するための記号のことです。JavaScriptには以下のような演算子があります。
+          </p>
+          <p className="mb-4">
+            <ul className="list-disc pl-8">
+              <li>数学演算子： <strong>+</strong>、<strong>-</strong>、<strong>*</strong>、<strong>/</strong> など</li>
+              <li>比較演算子： <strong>&gt;</strong>、<strong>&lt;</strong>、<strong>&gt;=</strong>、<strong>&lt;=</strong>、<strong>==</strong>、<strong>!=</strong> など</li>
+              <li>論理演算子： <strong>&amp;&amp;</strong>、<strong>||</strong>、<strong>!</strong> など</li>
+            </ul>
+          </p>
+          <p className="mb-4">
+            以下のように、変数や値に対して演算子を使って操作することができます。
           </p>
           <p className="mb-8">
             <pre>{code03}</pre>
-          </p>
-          <h3 id="control" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>4. 制御構造</h3>
-          <p className="mb-8">
-            JavaScriptには、if文、for文、while文、switch文などがあります。これらの構造は、条件に応じて処理を分岐させるために使用します。
-          </p>
-          <p className="mb-8">
-            <pre>{code04}</pre>
           </p>
         </div>
 
@@ -292,8 +201,8 @@ switch (day) {
           <h3 className="h3 mb-8">関連記事</h3>
           <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript02">
             <div>
-              <div className="text-normal font-medium mb-1">DOMの概念と操作方法</div>
-              <div className="text-sm text-gray-600">次のページ</div>
+              <div className="text-normal font-medium mb-1">制御構造</div>
+              <div className="text-sm text-gray-600">次の章</div>
             </div>
             <svg className="w-4 h-4 fill-current text-blue-600 shrink-0 ml-6" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
               <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
@@ -309,37 +218,9 @@ switch (day) {
               aria-label="Open Modal"
               type="button"
               className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-              onClick={() => setIsModalOpen(true)}>
-              AIに質問する
+              onClick={() => navigate('/trial') }>
+              問題に挑戦する
             </button>
-            {isModalOpen && (
-                <div className="fixed bottom-0 inset-x-0 px-4 pb-6 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center z-10">
-                    <div className="fixed inset-0 transition-opacity">
-                    <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
-                    </div>
-                    <div className="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-3xl sm:w-full fadeIn" style={{ overflowY: 'auto' }}>
-                    <div className="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                        <section className="flex flex-col gap-3 w-full justify-center items-center">
-                            <Text variant="h2" className="text-xl font-bold text-center">AI Chat Bot</Text>
-                            <div className="w-full rounded-lg shadow-lg bg-white p-4">
-                            <Chat />
-                            </div>
-                        </section>
-                    </div>
-                    <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                        <span className="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
-                        <button
-                            type="button"
-                            className="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-red-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red sm:text-sm sm:leading-5"
-                            onClick={() => setIsModalOpen(false)}
-                        >
-                            Close
-                        </button>
-                        </span>
-                    </div>
-                    </div>
-                </div>
-            )}
             <ul className="inline-flex justify-center -m-2">
               <li className="p-2">
                 <a href="#0" title="No, at all">

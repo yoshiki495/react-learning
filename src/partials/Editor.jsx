@@ -8,7 +8,7 @@ function EditorComponent() {
       <Editor
           height="calc(100% - 4rem)"
           defaultLanguage="javascript"
-          defaultValue="// Some code..."
+          defaultValue="// ここに入力してください"
           theme="vs-dark"
         />
     </>

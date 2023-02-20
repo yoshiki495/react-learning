@@ -1,9 +1,39 @@
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function JavaScriptContent02() {
   const [sidebarNavOpen, setSidebarNavOpen] = useState(false);
   const [sidebarLinkOpen, setSidebarLinkOpen] = useState(true);
+
+  const navigate = useNavigate();
+
+  const code01 = `
+  var x = 10;
+  if (x > 0) {
+    console.log("xは正の数です");
+  } else if (x < 0) {
+    console.log("xは負の数です");
+  } else {
+    console.log("xは0です");
+  }`;
+  
+  const code02 = `for (var i = 0; i < 10; i++) {
+  console.log(i);
+}`
+
+  const code03 = `var i = 0;
+while (i < 10) {
+  console.log(i);
+  i++;
+}`;
+
+  const code04 = `var i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i < 10);`;
+
   return (
     <div className="md:flex md:justify-between" data-sticky-container>
       <aside className="relative my-12 md:my-0 md:w-64 md:mr-12 lg:mr-20 md:shrink-0">
@@ -45,7 +75,7 @@ function JavaScriptContent02() {
                         <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 3.294L1.4 1.035C1.1.847.7.941.4 1.13c-.2.189-.4.471-.4.753v10.353c0 .377.2.753.6.847L7 15.718V3.294zM15.6 1.13c-.3-.189-.6-.189-.9-.095L9 3.295v12.423l6.4-2.542c.4-.188.6-.47.6-.847V1.882c0-.282-.2-.564-.4-.753z" />
                         </svg>
-                        <span>JavaScriptの基本構文</span>
+                        <span>変数、データ型、演算子</span>
                     </div>
                     </a>
                 </li>
@@ -60,7 +90,7 @@ function JavaScriptContent02() {
                         <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15 4H4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1zM12 10H1c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1zM15 16H4c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1z" />
                         </svg>
-                        <span>DOMの概念と操作方法</span>
+                        <span>制御構造（条件分岐、ループ）</span>
                     </div>
                     <svg className="w-3 h-3 fill-current text-gray-400 cursor-pointer ml-1 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z" />
@@ -71,13 +101,13 @@ function JavaScriptContent02() {
                     className={`font-normal -mb-1 mt-1 ml-2 pl-5 border-l border-gray-300 ${!sidebarLinkOpen && 'hidden'}`}
                     >
                     <li className="py-1">
-                        <a className="text-gray-600 hover:underline" href="#domget">ノードの取得</a>
+                        <a className="text-gray-600 hover:underline" href="#if">条件分岐</a>
                     </li>
                     <li className="py-1">
-                        <a className="text-gray-600 hover:underline" href="#domoperation">ノードの操作</a>
+                        <a className="text-gray-600 hover:underline" href="#for">ループ（for文）</a>
                     </li>
                     <li className="py-1">
-                        <a className="text-gray-600 hover:underline" href="#domevent">イベント</a>
+                        <a className="text-gray-600 hover:underline" href="#while">ループ（while文とdo-while文）</a>
                     </li>
                     </ul>
                 </li>
@@ -87,7 +117,7 @@ function JavaScriptContent02() {
                         <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6 9H1a1 1 0 01-1-1V1a1 1 0 011-1h5a1 1 0 011 1v7a1 1 0 01-1 1zM6 16H1a1 1 0 01-1-1v-3a1 1 0 011-1h5a1 1 0 011 1v3a1 1 0 01-1 1zM15 6h-5a1 1 0 01-1-1V1a1 1 0 011-1h5a1 1 0 011 1v4a1 1 0 01-1 1zM15 16h-5a1 1 0 01-1-1V9a1 1 0 011-1h5a1 1 0 011 1v6a1 1 0 01-1 1z" />
                         </svg>
-                        <span>JavaScriptによるイベント処理</span>
+                        <span>配列、オブジェクト</span>
                     </div>
                     </a>
                 </li>
@@ -97,7 +127,7 @@ function JavaScriptContent02() {
                         <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.5 15.414l-2.5-3V1a1 1 0 011-1h3a1 1 0 011 1v11.414l-2.5 3zM7 0H1C.4 0 0 .4 0 1v2h3v2H0v2h3v2H0v2h3v2H0v2c0 .6.4 1 1 1h6c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1z" />
                         </svg>
-                        <span>JavaScriptのオブジェクト指向プログラミング</span>
+                        <span>関数、スコープ</span>
                     </div>
                     </a>
                 </li>
@@ -109,43 +139,7 @@ function JavaScriptContent02() {
                         <circle cx="12" cy="13" r="3" />
                         <circle cx="14.5" cy="5.5" r="1.5" />
                         </svg>
-                        <span>関数型プログラミング</span>
-                    </div>
-                    </a>
-                </li>
-                <li className="py-2">
-                    <a className="flex items-center hover:underline" href="/documentation/javascript06">
-                    <div className="flex items-center grow">
-                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="4.5" cy="4.5" r="4.5" />
-                        <circle cx="12" cy="13" r="3" />
-                        <circle cx="14.5" cy="5.5" r="1.5" />
-                        </svg>
-                        <span>JavaScriptのライブラリやフレームワーク、jQueryなどの使用方法</span>
-                    </div>
-                    </a>
-                </li>
-                <li className="py-2">
-                    <a className="flex items-center hover:underline" href="/documentation/javascript07">
-                    <div className="flex items-center grow">
-                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="4.5" cy="4.5" r="4.5" />
-                        <circle cx="12" cy="13" r="3" />
-                        <circle cx="14.5" cy="5.5" r="1.5" />
-                        </svg>
-                        <span>JavaScriptによるAjax通信</span>
-                    </div>
-                    </a>
-                </li>
-                <li className="py-2">
-                    <a className="flex items-center hover:underline" href="/documentation/javascript08">
-                    <div className="flex items-center grow">
-                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="4.5" cy="4.5" r="4.5" />
-                        <circle cx="12" cy="13" r="3" />
-                        <circle cx="14.5" cy="5.5" r="1.5" />
-                        </svg>
-                        <span>JavaScriptのテストフレームワークの使用方法</span>
+                        <span>コールバック、プロミス、非同期処理</span>
                     </div>
                     </a>
                 </li>
@@ -155,40 +149,54 @@ function JavaScriptContent02() {
       </aside>
       <div className="md:grow">
         <div className="text-lg text-gray-600">
-          <h2 className="h2 text-gray-900 mb-4">DOMの概念と操作方法</h2>
-          <p className="mb-8">
-            DOM (Document Object Model) は、Webページの文書構造をオブジェクトとして表現する仕組みです。HTMLやXML文書は、要素や属性、テキストなどのノードから構成されます。DOMは、これらのノードをJavaScriptから操作するためのインターフェイスを提供します。
+          <h2 className="h2 text-gray-900 mb-4">制御構造</h2>
+          <p className="mb-12">
+            この項目では、条件分岐（if文、switch文）やループ（for文、while文）などの制御構造について学習します。これらの構造は、プログラムの流れを制御するために非常に重要な要素であり、JavaScriptのプログラムを組むためには理解が必要です。
           </p>
-          <p className="mb-8">
-            DOM操作については、以下のように解説できます。
+          <h3 id="if" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>条件分岐</h3>
+          <p className="mb-4">
+            条件分岐とは、ある条件が成り立っている場合にだけ特定の処理を行うための構造です。JavaScriptにおいては、if文を使って条件分岐を実現します。
           </p>
-          <h3 id="domget" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>1. DOMのノードの取得</h3>
-          <p className="mb-8">
-            DOMには、document.getElementById、document.getElementsByTagName、document.getElementsByClassNameなどのメソッドがあり、これらを使用してHTMLの要素を取得します。
+          <p className="mb-4">
+            以下のように、if文を使って条件分岐を行うことができます。
           </p>
-          <p className="mb-8">
-            コードは後日記載。
+          <p className="mb-4">
+            <pre>{code01}</pre>
           </p>
-          <h3 id="domoperation" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>2. DOMのノードの操作</h3>
-          <p className="mb-8">
-            取得した要素に対して、innerHTMLプロパティやstyleプロパティなどを操作することで、DOMの要素を更新することができます。
+          <p className="mb-12"> 
+            この場合、xが正の数である場合には「<strong>x</strong>は正の数です」という文が表示され、負の数である場合には「xは負の数です」という文が表示されます。xが0である場合には、「<strong>x</strong>は0です」という文が表示されます。
           </p>
-          <p className="mb-8">
-            コードは後日記載。
+          <h3 id="for" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>ループ（for文）</h3>
+          <p className="mb-4">
+            ループとは、同じ処理を繰り返し行うための構造です。JavaScriptにおいては、for文を使ってループを実現します。
           </p>
-          <h3 id="domevent" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>3. DOMのイベント</h3>
-          <p className="mb-8">
-            DOMの要素に対して、イベントリスナーを設定することで、ユーザーの操作に応じてJavaScriptの処理を実行することができます。
+          <p className="mb-4">
+            以下のように、for文を使ってループを行うことができます。
           </p>
-          <p className="mb-8">
-            コードは後日記載。
+          <p className="mb-4">
+            <pre>{code02}</pre>
           </p>
-          <h3 id="control" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>まとめ</h3>
-          <p className="mb-8">
-            上記のように、DOMには、HTMLの要素を取得し操作するためのAPIが提供されています。また、イベントに対しての処理も可能です。
+          <p className="mb-12">
+            この場合、<strong>i</strong>が0から9までの値をとり、それぞれに対して<strong>console.log(i)</strong>が実行されます。
           </p>
-          <p className="mb-8">
-            これらを理解し、応用することで、Webページのインタラクティブな動作を実現することができます。
+          <h3 id="while" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>ループ（while文とdo-while文）</h3>
+          <p className="mb-4">
+            while文とdo-while文は、for文と同様にループを実現するための構造です。
+          </p>
+          <p className="mb-4">
+            while文は、条件が成り立っている限り繰り返し処理を行います。
+          </p>
+          <p className="mb-4">
+            <pre>{code03}</pre>
+          </p>
+          <p className="mb-4">
+            do-while文は、まず1回だけ処理を行い、その後条件が成り立っている限り繰り返し処理を行います。
+          </p>
+          <p className="mb-4">
+            <pre>{code04}</pre>
+          </p>
+          <p className="mb-12">
+            while文とdo-while文は、for文と比較して柔軟性がありますが、処理の流れが読みにくくなることがあるため、適切な場面で使い分ける必要があります。
           </p>
         </div>
 
@@ -197,8 +205,8 @@ function JavaScriptContent02() {
           <h3 className="h3 mb-8">関連記事</h3>
           <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript01">
             <div>
-              <div className="text-normal font-medium mb-1">JavaScriptの基本構文</div>
-              <div className="text-sm text-gray-600">前のページ</div>
+              <div className="text-normal font-medium mb-1">変数、データ型、演算子</div>
+              <div className="text-sm text-gray-600">前の章</div>
             </div>
             <svg className="w-4 h-4 fill-current text-blue-600 shrink-0 ml-6" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
               <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
@@ -206,8 +214,8 @@ function JavaScriptContent02() {
           </a>
           <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript03">
             <div>
-              <div className="text-normal font-medium mb-1">JavaScriptによるイベント処理</div>
-              <div className="text-sm text-gray-600">次のページ</div>
+              <div className="text-normal font-medium mb-1">制御構造</div>
+              <div className="text-sm text-gray-600">次の章</div>
             </div>
             <svg className="w-4 h-4 fill-current text-blue-600 shrink-0 ml-6" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
               <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
@@ -219,7 +227,13 @@ function JavaScriptContent02() {
         {/* Feedback */}
         <div className="pt-6">
           <div className="flex flex-col text-center sm:text-left sm:flex-row sm:justify-between sm:items-center">
-            <div className="font-medium mb-4 md:mb-0">Was this page helpful?</div>
+            <button 
+                aria-label="Open Modal"
+                type="button"
+                className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                onClick={() => navigate('/trial') }>
+                問題に挑戦する
+            </button>
             <ul className="inline-flex justify-center -m-2">
               <li className="p-2">
                 <a href="#0" title="No, at all">

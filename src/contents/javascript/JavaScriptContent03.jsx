@@ -1,9 +1,24 @@
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function JavaScriptContent03() {
   const [sidebarNavOpen, setSidebarNavOpen] = useState(false);
   const [sidebarLinkOpen, setSidebarLinkOpen] = useState(true);
+
+  const navigate = useNavigate();
+
+  const code01 = `var array = [1, 2, 3, 4, 5];`
+  const code02 = `var array = [1, 2, 3];
+array.push(4); // [1, 2, 3, 4]
+var a = array[1]; // 2
+array[1] = 5; // [1, 5, 3, 4]`
+  const code03 = `var obj = {name: "Alice", age: 20};`
+  const code04 = `var obj = {name: "Alice", age: 20};
+obj.city = "Tokyo";
+var a = obj.age; // 20
+obj.age = 30;`
+
   return (
     <div className="md:flex md:justify-between" data-sticky-container>
       <aside className="relative my-12 md:my-0 md:w-64 md:mr-12 lg:mr-20 md:shrink-0">
@@ -45,7 +60,7 @@ function JavaScriptContent03() {
                         <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 3.294L1.4 1.035C1.1.847.7.941.4 1.13c-.2.189-.4.471-.4.753v10.353c0 .377.2.753.6.847L7 15.718V3.294zM15.6 1.13c-.3-.189-.6-.189-.9-.095L9 3.295v12.423l6.4-2.542c.4-.188.6-.47.6-.847V1.882c0-.282-.2-.564-.4-.753z" />
                         </svg>
-                        <span>JavaScriptの基本構文</span>
+                        <span>変数、データ型、演算子</span>
                     </div>
                     </a>
                 </li>
@@ -55,7 +70,7 @@ function JavaScriptContent03() {
                         <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15 4H4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1zM12 10H1c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1zM15 16H4c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1z" />
                         </svg>
-                        <span>DOMの概念と操作方法</span>
+                        <span>制御構造（条件分岐、ループ）</span>
                     </div>
                     </a>
                 </li>
@@ -70,7 +85,7 @@ function JavaScriptContent03() {
                         <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6 9H1a1 1 0 01-1-1V1a1 1 0 011-1h5a1 1 0 011 1v7a1 1 0 01-1 1zM6 16H1a1 1 0 01-1-1v-3a1 1 0 011-1h5a1 1 0 011 1v3a1 1 0 01-1 1zM15 6h-5a1 1 0 01-1-1V1a1 1 0 011-1h5a1 1 0 011 1v4a1 1 0 01-1 1zM15 16h-5a1 1 0 01-1-1V9a1 1 0 011-1h5a1 1 0 011 1v6a1 1 0 01-1 1z" />
                         </svg>
-                        <span>JavaScriptによるイベント処理</span>
+                        <span>配列、オブジェクト</span>
                     </div>
                     <svg className="w-3 h-3 fill-current text-gray-400 cursor-pointer ml-1 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z" />
@@ -81,10 +96,10 @@ function JavaScriptContent03() {
                     className={`font-normal -mb-1 mt-1 ml-2 pl-5 border-l border-gray-300 ${!sidebarLinkOpen && 'hidden'}`}
                     >
                     <li className="py-1">
-                        <a className="text-gray-600 hover:underline" href="#domget">イベントリスナーの登録</a>
+                        <a className="text-gray-600 hover:underline" href="#array">配列</a>
                     </li>
                     <li className="py-1">
-                        <a className="text-gray-600 hover:underline" href="#domoperation">イベントオブジェクト</a>
+                        <a className="text-gray-600 hover:underline" href="#object">オブジェクト</a>
                     </li>
                     </ul>
                 </li>
@@ -94,7 +109,7 @@ function JavaScriptContent03() {
                         <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.5 15.414l-2.5-3V1a1 1 0 011-1h3a1 1 0 011 1v11.414l-2.5 3zM7 0H1C.4 0 0 .4 0 1v2h3v2H0v2h3v2H0v2h3v2H0v2c0 .6.4 1 1 1h6c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1z" />
                         </svg>
-                        <span>JavaScriptのオブジェクト指向プログラミング</span>
+                        <span>関数、スコープ</span>
                     </div>
                     </a>
                 </li>
@@ -106,43 +121,7 @@ function JavaScriptContent03() {
                         <circle cx="12" cy="13" r="3" />
                         <circle cx="14.5" cy="5.5" r="1.5" />
                         </svg>
-                        <span>関数型プログラミング</span>
-                    </div>
-                    </a>
-                </li>
-                <li className="py-2">
-                    <a className="flex items-center hover:underline" href="/documentation/javascript06">
-                    <div className="flex items-center grow">
-                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="4.5" cy="4.5" r="4.5" />
-                        <circle cx="12" cy="13" r="3" />
-                        <circle cx="14.5" cy="5.5" r="1.5" />
-                        </svg>
-                        <span>JavaScriptのライブラリやフレームワーク、jQueryなどの使用方法</span>
-                    </div>
-                    </a>
-                </li>
-                <li className="py-2">
-                    <a className="flex items-center hover:underline" href="/documentation/javascript07">
-                    <div className="flex items-center grow">
-                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="4.5" cy="4.5" r="4.5" />
-                        <circle cx="12" cy="13" r="3" />
-                        <circle cx="14.5" cy="5.5" r="1.5" />
-                        </svg>
-                        <span>JavaScriptによるAjax通信</span>
-                    </div>
-                    </a>
-                </li>
-                <li className="py-2">
-                    <a className="flex items-center hover:underline" href="/documentation/javascript08">
-                    <div className="flex items-center grow">
-                        <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="4.5" cy="4.5" r="4.5" />
-                        <circle cx="12" cy="13" r="3" />
-                        <circle cx="14.5" cy="5.5" r="1.5" />
-                        </svg>
-                        <span>JavaScriptのテストフレームワークの使用方法</span>
+                        <span>コールバック関数、プロミス、非同期処理</span>
                     </div>
                     </a>
                 </li>
@@ -152,35 +131,52 @@ function JavaScriptContent03() {
       </aside>
       <div className="md:grow">
         <div className="text-lg text-gray-600">
-          <h2 className="h2 text-gray-900 mb-4">JavaScriptによるイベント処理</h2>
-          <p className="mb-8">
-            JavaScriptによるイベント処理は、Webページに対して、ユーザーの操作に応じてJavaScriptの処理を実行することができます。
+          <h2 className="h2 text-gray-900 mb-4">配列、オブジェクト</h2>
+          <p className="mb-12">
+            この項目では、JavaScriptでの配列とオブジェクトについて学習します。配列は、複数の値を一つの変数に格納するためのデータ型であり、オブジェクトは、複数の値を一つのまとまり（オブジェクト）として扱うためのデータ型です。JavaScriptでのデータの扱い方を理解する上で、重要な項目です。
+          </p>
+          <h3 id="array" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>配列</h3>
+          <p className="mb-4">
+            配列とは、複数のデータを順序付けて格納するためのデータ型です。JavaScriptにおいては、以下のように[]を使って配列を宣言します。
+          </p>
+          <p className="mb-4">
+            <pre>{code01}</pre>
           </p>
           <p className="mb-8">
-            イベント処理については、以下のように説明できます。
+            配列には、以下のように様々な操作を行うことができます。
           </p>
-          <h3 id="domget" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>イベントリスナーの登録</h3>
-          <p className="mb-8">
-            DOMの要素に対して、イベントリスナーを登録することで、特定のイベントが発生した時にJavaScriptの処理を実行することができます。
+          <p>
+            <ul className="list-disc pl-4">
+              <li>要素の追加 : push()メソッドを使って配列の最後尾に要素を追加することができます。</li>
+              <li>要素の取り出し : []を使ってインデックスを指定することで、配列の特定の要素を取り出すことができます。</li>
+              <li>要素の変更 : []を使ってインデックスを指定することで、配列の特定の要素を変更することができます。</li>
+            </ul>
           </p>
-          <p className="mb-8">
-            コードは後日記載。
+          <p className="mb-12">
+            <pre>{code02}</pre>
           </p>
-          <p className="mb-8">
-            上記の例では、myButtonというidを持つ要素に対して、clickイベントのイベントリスナーが登録されています。これにより、ユーザーがこの要素をクリックした時に、イベントリスナーが登録した関数が実行されます。
+          <h3 id="object" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>オブジェクト</h3>
+          <p className="mb-4">
+            オブジェクトとは、関連するデータをまとめたものです。JavaScriptにおいては、以下のように{}を使ってオブジェクトを宣言します。
           </p>
-          <h3 id="domoperation" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>イベントオブジェクト</h3>
-          <p className="mb-8">
-            イベントリスナーに渡されるイベントオブジェクトは、イベントが発生した要素や、イベントの種類、発生時の情報を取得することができます。
+          <p className="mb-4">
+            <pre>{code03}</pre>
           </p>
-          <p className="mb-8">
-            コードは後日記載。
+          <p className="mb-4">
+            オブジェクトには、以下のように様々な操作を行うことができます。
           </p>
-          <p className="mb-8">
-            上記の例では、イベントリスナー関数に渡されるイベントオブジェクトから、イベントが発生した要素（event.target）やイベントの種類（event.type）を取得することができます。
+          <p className="mb-4">
+            <ul className="list-disc pl-4">
+              <li>プロパティの追加 : オブジェクト名.プロパティ名 = 値のようにして、オブジェクトに新しいプロパティを追加することができます。</li>
+              <li>プロパティの取り出し : オブジェクト名.プロパティ名のようにして、オブジェクトの特定のプロパティを取り出すことができます。</li>
+              <li>プロパティの変更 : オブジェクト名.プロパティ名 = 値のようにして、オブジェクトの特定のプロパティを変更することができます。</li>
+            </ul>
           </p>
-          <p className="mb-8">
-            イベント処理により、Webページに対して、ユーザーの操作に応じて、JavaScriptの処理を実行することができます。これにより、Webページをよりインタラクティブにすることができます。
+          <p className="mb-4">
+            <pre>{code04}</pre>
+          </p>
+          <p className="mb-4">
+            オブジェクトには、配列と異なり、プロパティに名前をつけることができます。そのため、プロパティを使ってより詳細な情報を表現すること
           </p>
         </div>
 
@@ -189,8 +185,8 @@ function JavaScriptContent03() {
           <h3 className="h3 mb-8">関連記事</h3>
           <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript01">
             <div>
-              <div className="text-normal font-medium mb-1">DOMの概念と操作方法</div>
-              <div className="text-sm text-gray-600">前のページ</div>
+              <div className="text-normal font-medium mb-1">制御構造</div>
+              <div className="text-sm text-gray-600">前の章</div>
             </div>
             <svg className="w-4 h-4 fill-current text-blue-600 shrink-0 ml-6" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
               <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
@@ -198,8 +194,8 @@ function JavaScriptContent03() {
           </a>
           <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript03">
             <div>
-              <div className="text-normal font-medium mb-1">JavaScriptのオブジェクト指向プログラミング</div>
-              <div className="text-sm text-gray-600">次のページ</div>
+              <div className="text-normal font-medium mb-1">関数、スコープ</div>
+              <div className="text-sm text-gray-600">次の章</div>
             </div>
             <svg className="w-4 h-4 fill-current text-blue-600 shrink-0 ml-6" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
               <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
@@ -211,7 +207,13 @@ function JavaScriptContent03() {
         {/* Feedback */}
         <div className="pt-6">
           <div className="flex flex-col text-center sm:text-left sm:flex-row sm:justify-between sm:items-center">
-            <div className="font-medium mb-4 md:mb-0">Was this page helpful?</div>
+            <button 
+                aria-label="Open Modal"
+                type="button"
+                className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                onClick={() => navigate('/trial') }>
+                問題に挑戦する
+            </button>
             <ul className="inline-flex justify-center -m-2">
               <li className="p-2">
                 <a href="#0" title="No, at all">

@@ -1,21 +1,22 @@
 import React, { useRef, useEffect } from 'react';
-import { Terminal } from 'xterm';
-import 'xterm/css/xterm.css';
+import { ReactTerminal, TerminalContextProvider } from "react-terminal";
 
 function TerminalComponent() {
-  const terminalRef = useRef(null);
-
-  useEffect(() => {
-    const terminal = new Terminal();
-    terminal.open(terminalRef.current);
-    // ターミナルの初期化処理などを行う
-    return () => {
-      terminal.dispose();
-    };
-  }, []);
+  // Define commands here
+  const commands = {
+    whoami: "jackharper",
+    cd: (directory) => `changed path to ${directory}`
+  };
 
   return (
-    <div ref={terminalRef} />
+    <div className="h-1/2">
+        <TerminalContextProvider>
+            <ReactTerminal
+            commands={commands}
+            theme="material-dark"
+            />
+        </TerminalContextProvider>
+    </div>
   );
 }
 
