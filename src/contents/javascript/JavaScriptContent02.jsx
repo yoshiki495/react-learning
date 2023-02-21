@@ -160,9 +160,7 @@ do {
           <p className="mb-4">
             以下のように、if文を使って条件分岐を行うことができます。
           </p>
-          <p className="mb-4">
-            <pre>{code01}</pre>
-          </p>
+          <pre className="mb-4">{code01}</pre>
           <p className="mb-12"> 
             この場合、xが正の数である場合には「<strong>x</strong>は正の数です」という文が表示され、負の数である場合には「xは負の数です」という文が表示されます。xが0である場合には、「<strong>x</strong>は0です」という文が表示されます。
           </p>
@@ -173,9 +171,7 @@ do {
           <p className="mb-4">
             以下のように、for文を使ってループを行うことができます。
           </p>
-          <p className="mb-4">
-            <pre>{code02}</pre>
-          </p>
+          <pre className="mb-4">{code02}</pre>
           <p className="mb-12">
             この場合、<strong>i</strong>が0から9までの値をとり、それぞれに対して<strong>console.log(i)</strong>が実行されます。
           </p>
@@ -186,15 +182,11 @@ do {
           <p className="mb-4">
             while文は、条件が成り立っている限り繰り返し処理を行います。
           </p>
-          <p className="mb-4">
-            <pre>{code03}</pre>
-          </p>
+          <pre className="mb-4">{code03}</pre>
           <p className="mb-4">
             do-while文は、まず1回だけ処理を行い、その後条件が成り立っている限り繰り返し処理を行います。
           </p>
-          <p className="mb-4">
-            <pre>{code04}</pre>
-          </p>
+          <pre className="mb-4">{code04}</pre>
           <p className="mb-12">
             while文とdo-while文は、for文と比較して柔軟性がありますが、処理の流れが読みにくくなることがあるため、適切な場面で使い分ける必要があります。
           </p>
@@ -214,7 +206,7 @@ do {
           </a>
           <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript03">
             <div>
-              <div className="text-normal font-medium mb-1">制御構造</div>
+              <div className="text-normal font-medium mb-1">配列、オブジェクト</div>
               <div className="text-sm text-gray-600">次の章</div>
             </div>
             <svg className="w-4 h-4 fill-current text-blue-600 shrink-0 ml-6" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">

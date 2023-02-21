@@ -32,7 +32,7 @@ function About() {
       </main>
 
       {/*  Site footer */}
-      <Footer />
+      {/* <Footer /> */}
 
     </div>
   );

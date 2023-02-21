@@ -155,45 +155,35 @@ var f = !e; // 否定演算子`
           <p className="mb-4">
             変数を宣言するには、<strong>var</strong>、<strong>let</strong>、<strong>const</strong>のいずれかのキーワードを使います。例えば、以下のように変数を宣言することができます。
           </p>
-          <p className="mb-12">
-            <pre>{code01}</pre>
-          </p>
+          <pre className="mb-12">{code01}</pre>
           <h3 id="type" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>データ型</h3>
           <p className="mb-4">
             データ型とは、変数が格納できるデータの種類を表します。JavaScriptには以下のようなデータ型があります。
           </p>
-          <p className="mb-4">
-            <ul className="list-disc pl-8">
-              <li>文字列（String）: 文字の並びを表します。</li>
-              <li>数値（Number）: 整数や小数を表します。</li>
-              <li>真偽値（Boolean）: <strong>true</strong> または <strong>false</strong> を表します。</li>
-              <li>配列（Array）: 複数のデータを順序付けて格納することができます。</li>
-              <li>オブジェクト（Object）: 関連するデータをまとめたものです。</li>
-            </ul>
-          </p>
+          <ul className="list-disc pl-8">
+            <li>文字列（String）: 文字の並びを表します。</li>
+            <li>数値（Number）: 整数や小数を表します。</li>
+            <li>真偽値（Boolean）: <strong>true</strong> または <strong>false</strong> を表します。</li>
+            <li>配列（Array）: 複数のデータを順序付けて格納することができます。</li>
+            <li>オブジェクト（Object）: 関連するデータをまとめたものです。</li>
+          </ul>
           <p className="mb-4">
             以下のように、変数にデータを代入する際に、そのデータの型が自動的に判定されます。
           </p>
-          <p className="mb-12">
-            <pre>{code02}</pre>
-          </p>
+          <pre className="mb-12">{code02}</pre>
           <h3 id="operator" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>演算子</h3>
           <p className="mb-4">
             演算子とは、データを操作するための記号のことです。JavaScriptには以下のような演算子があります。
           </p>
-          <p className="mb-4">
-            <ul className="list-disc pl-8">
-              <li>数学演算子： <strong>+</strong>、<strong>-</strong>、<strong>*</strong>、<strong>/</strong> など</li>
-              <li>比較演算子： <strong>&gt;</strong>、<strong>&lt;</strong>、<strong>&gt;=</strong>、<strong>&lt;=</strong>、<strong>==</strong>、<strong>!=</strong> など</li>
-              <li>論理演算子： <strong>&amp;&amp;</strong>、<strong>||</strong>、<strong>!</strong> など</li>
-            </ul>
-          </p>
+          <ul className="list-disc pl-8 mb-4">
+            <li>数学演算子： <strong>+</strong>、<strong>-</strong>、<strong>*</strong>、<strong>/</strong> など</li>
+            <li>比較演算子： <strong>&gt;</strong>、<strong>&lt;</strong>、<strong>&gt;=</strong>、<strong>&lt;=</strong>、<strong>==</strong>、<strong>!=</strong> など</li>
+            <li>論理演算子： <strong>&amp;&amp;</strong>、<strong>||</strong>、<strong>!</strong> など</li>
+          </ul>
           <p className="mb-4">
             以下のように、変数や値に対して演算子を使って操作することができます。
           </p>
-          <p className="mb-8">
-            <pre>{code03}</pre>
-          </p>
+          <pre className="mb-12">{code03}</pre>
         </div>
 
         {/* Related content */}
@@ -218,7 +208,7 @@ var f = !e; // 否定演算子`
               aria-label="Open Modal"
               type="button"
               className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-              onClick={() => navigate('/trial') }>
+              onClick={() => navigate('/trial/01') }>
               問題に挑戦する
             </button>
             <ul className="inline-flex justify-center -m-2">

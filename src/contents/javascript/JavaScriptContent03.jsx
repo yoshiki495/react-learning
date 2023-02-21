@@ -139,29 +139,21 @@ obj.age = 30;`
           <p className="mb-4">
             配列とは、複数のデータを順序付けて格納するためのデータ型です。JavaScriptにおいては、以下のように[]を使って配列を宣言します。
           </p>
+          <pre className="mb-4">{code01}</pre>
           <p className="mb-4">
-            <pre>{code01}</pre>
-          </p>
-          <p className="mb-8">
             配列には、以下のように様々な操作を行うことができます。
           </p>
-          <p>
-            <ul className="list-disc pl-4">
-              <li>要素の追加 : push()メソッドを使って配列の最後尾に要素を追加することができます。</li>
-              <li>要素の取り出し : []を使ってインデックスを指定することで、配列の特定の要素を取り出すことができます。</li>
-              <li>要素の変更 : []を使ってインデックスを指定することで、配列の特定の要素を変更することができます。</li>
-            </ul>
-          </p>
-          <p className="mb-12">
-            <pre>{code02}</pre>
-          </p>
+          <ul className="list-disc pl-8 mb-4">
+            <li>要素の追加 : push()メソッドを使って配列の最後尾に要素を追加することができます。</li>
+            <li>要素の取り出し : []を使ってインデックスを指定することで、配列の特定の要素を取り出すことができます。</li>
+            <li>要素の変更 : []を使ってインデックスを指定することで、配列の特定の要素を変更することができます。</li>
+          </ul>
+          <pre className="mb-12">{code02}</pre>
           <h3 id="object" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>オブジェクト</h3>
           <p className="mb-4">
             オブジェクトとは、関連するデータをまとめたものです。JavaScriptにおいては、以下のように{}を使ってオブジェクトを宣言します。
           </p>
-          <p className="mb-4">
-            <pre>{code03}</pre>
-          </p>
+          <pre className="mb-4">{code03}</pre>
           <p className="mb-4">
             オブジェクトには、以下のように様々な操作を行うことができます。
           </p>
@@ -172,9 +164,7 @@ obj.age = 30;`
               <li>プロパティの変更 : オブジェクト名.プロパティ名 = 値のようにして、オブジェクトの特定のプロパティを変更することができます。</li>
             </ul>
           </p>
-          <p className="mb-4">
-            <pre>{code04}</pre>
-          </p>
+          <pre className="mb-4">{code04}</pre>
           <p className="mb-4">
             オブジェクトには、配列と異なり、プロパティに名前をつけることができます。そのため、プロパティを使ってより詳細な情報を表現すること
           </p>
@@ -183,7 +173,7 @@ obj.age = 30;`
         {/* Related content */}
         <div className="mt-8">
           <h3 className="h3 mb-8">関連記事</h3>
-          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript01">
+          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript02">
             <div>
               <div className="text-normal font-medium mb-1">制御構造</div>
               <div className="text-sm text-gray-600">前の章</div>
@@ -192,7 +182,7 @@ obj.age = 30;`
               <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
             </svg>
           </a>
-          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript03">
+          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript04">
             <div>
               <div className="text-normal font-medium mb-1">関数、スコープ</div>
               <div className="text-sm text-gray-600">次の章</div>

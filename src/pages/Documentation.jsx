@@ -58,7 +58,7 @@ function Documentation() {
             </section>
           </main>
           {/*  Site footer */}
-          <Footer />
+          {/* <Footer /> */}
         </div>
       );
     }

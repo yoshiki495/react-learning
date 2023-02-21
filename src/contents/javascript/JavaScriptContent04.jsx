@@ -145,46 +145,36 @@ console.log(b); // ローカルスコープの変数にアクセスできない`
           <p className="mb-4">
             関数とは、特定の処理をまとめて、それを何度も使いまわすことができるようにしたものです。JavaScriptにおいては、以下のようにfunctionを使って関数を宣言します。
           </p>
-          <p className="mb-4">
-            <pre>{code01}</pre>
-          </p>
+          <pre className="mb-4">{code01}</pre>
           <p className="mb-4">
             この場合、addという関数が定義されており、引数としてaとbを取り、それらを足し算した結果をreturn文で返します。関数を呼び出すには、以下のように関数名に引数を渡します。
           </p>
-          <p className="mb-12">
-            <pre>{code02}</pre>
-          </p>
+          <pre className="mb-12">{code02}</pre>
           <h3 id="scope" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>スコープ</h3>
           <p className="mb-4">
             スコープとは、変数や関数などが有効な範囲のことを表します。JavaScriptにおいては、以下のようにグローバルスコープとローカルスコープがあります。
           </p>
-          <p className="mb-4">
-            <ul className="list-disc pl-8">
-              <li>グローバルスコープ : 関数の外側で宣言された変数や関数が有効なスコープです。</li>
-              <li>ローカルスコープ : 関数の中で宣言された変数や関数が有効なスコープです。</li>
-            </ul>
-          </p>
+          <ul className="list-disc pl-8 mb-4">
+            <li>グローバルスコープ : 関数の外側で宣言された変数や関数が有効なスコープです。</li>
+            <li>ローカルスコープ : 関数の中で宣言された変数や関数が有効なスコープです。</li>
+          </ul>
           <p className="mb-4">
             以下のように、グローバルスコープとローカルスコープを使って変数を宣言することができます。
           </p>
-          <p className="mb-12">
-            <pre>{code03}</pre>
-          </p>
+          <pre className="mb-12">{code03}</pre>
           <p className="mb-4">
             グローバルスコープで宣言された変数は、どこからでもアクセスできます。一方、ローカルスコープで宣言された変数は、その関数内でしかアクセスできません。
           </p>
           <p className="mb-4">
             以下の例では、setTimeout関数を使って非同期で処理を行っています。この処理は、指定した時間が経過した後に実行されます。
           </p>
-          <p className="mb-4">
-            <pre>{code04}</pre>
-          </p>
+          <pre className="mb-12">{code04}</pre>
         </div>
 
         {/* Related content */}
         <div className="mt-8">
           <h3 className="h3 mb-8">関連記事</h3>
-          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript02">
+          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript03">
             <div>
               <div className="text-normal font-medium mb-1">配列、オブジェクト</div>
               <div className="text-sm text-gray-600">前の章</div>
@@ -193,7 +183,7 @@ console.log(b); // ローカルスコープの変数にアクセスできない`
               <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
             </svg>
           </a>
-          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript02">
+          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript05">
             <div>
               <div className="text-normal font-medium mb-1">コールバック関数、プロミス、非同期処理</div>
               <div className="text-sm text-gray-600">次の章</div>

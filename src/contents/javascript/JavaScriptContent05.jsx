@@ -149,9 +149,7 @@ setTimeout(function() {
           <p className="mb-4">
             以下の例では、setTimeout関数にコールバック関数を渡しています。setTimeout関数は、指定した時間が経過した後にコールバック関数を呼び出します。
           </p>
-          <p className="mb-12">
-            <pre>{code01}</pre>
-          </p>
+          <pre className="mb-12">{code01}</pre>
           <h3 id="promise" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>プロミス</h3>
           <p className="mb-4">
             プロミスとは、非同期処理の完了を表すオブジェクトのことです。JavaScriptにおいては、プロミスを使って非同期処理を実現することができます。
@@ -159,9 +157,7 @@ setTimeout(function() {
           <p className="mb-4">
             以下の例では、fetch関数を使って非同期でAPIを呼び出し、その結果をプロミスで受け取っています。thenメソッドを使って、APIの結果が帰ってきたときに行う処理を定義しています。
           </p>
-          <p className="mb-12">
-            <pre>{code02}</pre>
-          </p>
+          <pre className="mb-12">{code02}</pre>
           <h3 id="async" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>非同期処理</h3>
           <p className="mb-4">
             非同期処理とは、複数の処理を同時に行うことができる処理のことです。JavaScriptにおいては、非同期処理を使ってユーザーインタフェースをブロックせずに長時間の処理を行うことができます。
@@ -169,9 +165,7 @@ setTimeout(function() {
           <p className="mb-4">
             以下の例では、setTimeout関数を使って非同期で処理を行っています。この処理は、指定した時間が経過した後に実行されます。
           </p>
-          <p className="mb-4">
-            {code03}
-          </p>
+          <pre className="mb-4">{code03}</pre>
           <p className="mb-12">
             この場合、setTimeout関数は、指定した時間が経過するまで待ち、その後にコールバック関数を呼び出します。そのため、console.log("end")は、console.log("start")の後に実行されます。
           </p>
@@ -180,7 +174,7 @@ setTimeout(function() {
         {/* Related content */}
         <div className="mt-8">
           <h3 className="h3 mb-8">関連記事</h3>
-          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript02">
+          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript04">
             <div>
               <div className="text-normal font-medium mb-1">関数、スコープ</div>
               <div className="text-sm text-gray-600">前の章</div>

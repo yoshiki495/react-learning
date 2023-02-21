@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import EditorComponent from '../partials/Editor'
 import TerminalComponent from '../partials/Terminal';
 import { Text } from '@vercel/examples-ui'
@@ -18,6 +18,7 @@ function Card(props) {
 function Trial() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
+  const { id } = useParams();
   return (
     <div className="flex flex-col h-screen">
       <div className="bg-white shadow-md flex justify-between p-4">
@@ -64,7 +65,7 @@ function Trial() {
       </div>
       <div className="flex h-full px-4 py-4">
         <div className="w-1/4 h-full" data-aos="zoom-y-out">
-          <Card title="問題" content={<Question/>} />
+          <Card title="問題" content={<Question id={id} />} />
         </div>
         <div className="w-5/12 h-full" data-aos="zoom-y-out">
           <Card title="エディタ画面" content={<EditorComponent/>} />

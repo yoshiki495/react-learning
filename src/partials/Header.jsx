@@ -67,7 +67,7 @@ function Header() {
           <nav className="hidden md:flex md:grow">
 
             {/* Desktop menu links */}
-            <ul className="flex grow justify-end flex-wrap items-center">
+            {/* <ul className="flex grow justify-end flex-wrap items-center">
               <li>
                 <Link to="/pricing" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Pricing</Link>
               </li>
@@ -85,9 +85,7 @@ function Header() {
               <li>
                 <Link to="/trial" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Trial</Link>
               </li>           
-              {/* 1st level: hover */}
               <Dropdown title="Documentation">
-                {/* 2nd level: hover */}
                 <li>
                   <Link to="/documentation/javascript01" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">JavaScript</Link>
                 </li>
@@ -110,7 +108,7 @@ function Header() {
                   <Link to="/404" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">404</Link>
                 </li>
               </Dropdown>
-            </ul>
+            </ul> */}
 
             {/* Desktop sign in links */}
             <ul className="flex grow justify-end flex-wrap items-center">
