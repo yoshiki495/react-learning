@@ -61,7 +61,7 @@ const Chat = () => {
     // Send request to the backend function
     const sendRequest = async (body) => {
       // Reference to the backend function
-      const requestFunction = functions.httpsCallable('handler');
+      const requestFunction = functions.httpsCallable('chat');
       // Send request with data as the payload
       const response = await requestFunction(body);
       // Return the response from the backend function

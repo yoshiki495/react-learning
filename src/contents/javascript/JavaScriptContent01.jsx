@@ -160,7 +160,7 @@ var f = !e; // 否定演算子`
           <p className="mb-4">
             データ型とは、変数が格納できるデータの種類を表します。JavaScriptには以下のようなデータ型があります。
           </p>
-          <ul className="list-disc pl-8">
+          <ul className="list-disc pl-8 mb-4">
             <li>文字列（String）: 文字の並びを表します。</li>
             <li>数値（Number）: 整数や小数を表します。</li>
             <li>真偽値（Boolean）: <strong>true</strong> または <strong>false</strong> を表します。</li>
