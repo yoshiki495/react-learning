@@ -110,18 +110,8 @@ export const review = functions.https.onCall(async (data, context) => {
  + value + "というコードを書いてしまいました。あなたは先生として不自然のない日本語でコードレビューをしてあげてください。";
 
   const payload = {
-    model: 'text-davinci-003',
-    prompt: prompt,
-    temperature: functions.config().ai.temp ? parseFloat(functions.config().ai.temp) : 0.7,
-    // max_tokens: functions.config().ai.maxtokens
-    //   ? parseInt(functions.config().ai.maxtokens)
-    //   : 200,
-    max_tokens: 989,
-    top_p: 1,
-    frequency_penalty: 0,
-    presence_penalty: 0,
-    stop: [`${botName}:`, `${userName}:`],
-    user: body?.user,
+    model: 'gpt-3.5-turbo',
+    messages: [{ "role": "user", "content": prompt }],
   };
 
   const requestHeaders: Record<string, string> = {
@@ -132,18 +122,18 @@ export const review = functions.https.onCall(async (data, context) => {
   if (functions.config().openai.apiorg) {
     requestHeaders['OpenAI-Organization'] = functions.config().apiorg;
   }
-
-  const response: AxiosResponse<any> = await axios({
-    method: 'post',
-    url: 'https://api.openai.com/v1/completions',
-    headers: requestHeaders,
-    data: JSON.stringify(payload),
-  });
-
   try {
+    const response: AxiosResponse<any> = await axios({
+      method: 'post',
+      url: 'https://api.openai.com/v1/chat/completions',
+      headers: requestHeaders,
+      data: JSON.stringify(payload),
+    });
     // return response with 200 and stringify json text
-    return { text: response.data.choices[0].text };
+    console.log(response.data.choices[0]);
+    return { text: response.data.choices[0].message.content };
   } catch (error) {
+    console.error(error);
     return {
       text: `ERROR with API integration. ${error}`,
     };
