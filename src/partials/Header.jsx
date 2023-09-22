@@ -39,7 +39,7 @@ function Header() {
     };
     window.addEventListener('scroll', scrollHandler);
     return () => window.removeEventListener('scroll', scrollHandler);
-  }, [top]);  
+  }, [top]);
 
   return (
     <header className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${!top && 'bg-white backdrop-blur-sm shadow-lg'}`}>
@@ -112,7 +112,7 @@ function Header() {
 
             {/* Desktop sign in links */}
             <ul className="flex grow justify-end flex-wrap items-center">
-              <li>
+              {/* <li>
                 <Link to="/signin" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</Link>
               </li>
               <li>
@@ -122,7 +122,7 @@ function Header() {
                     <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
                   </svg>                  
                 </Link>
-              </li>
+              </li> */}
             </ul>
 
           </nav>
@@ -158,7 +158,7 @@ function Header() {
                 enterEnd="opacity-100 translate-y-0"
                 leave="transition ease-out duration-200"
                 leaveStart="opacity-100"
-                leaveEnd="opacity-0"              
+                leaveEnd="opacity-0"
               >
                 <ul className="px-5 py-2">
                   <li>
@@ -169,10 +169,10 @@ function Header() {
                   </li>
                   <li>
                     <Link to="/tutorials" className="flex text-gray-600 hover:text-gray-900 py-2">Tutorials</Link>
-                  </li>  
+                  </li>
                   <li>
                     <Link to="/blog" className="flex text-gray-600 hover:text-gray-900 py-2">Blog</Link>
-                  </li>                                  
+                  </li>
                   <li className="py-2 my-2 border-t border-b border-gray-200">
                     <span className="flex text-gray-600 hover:text-gray-900 py-2">Resources</span>
                     <ul className="pl-4">

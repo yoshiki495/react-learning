@@ -33,15 +33,15 @@ function Documentation() {
   const { content } = useParams();
 
   const dict = {
-    "javascript01": <JavaScriptContent01/>, "javascript02": <JavaScriptContent02/>, "javascript03": <JavaScriptContent03/>, "javascript04": <JavaScriptContent04/>, "javascript05": <JavaScriptContent05/>,
-    "nodejs01": <NodejsContent01/>, "nodejs02": <NodejsContent02/>, "nodejs03": <NodejsContent03/>, "nodejs04": <NodejsContent04/>,
-    "typescript01": <TypeScriptContent01/>, "typescript02": <TypeScriptContent02/>, "typescript03": <TypeScriptContent03/>, "typescript04": <TypeScriptContent04/>,
-    "react01": <ReactContent01/>, "react02": <ReactContent02/>, "react03": <ReactContent03/>, "react04": <ReactContent04/>, "react05": <ReactContent05/>,
-    "nextjs01": <NextjsContent01/>, "nextjs02": <NextjsContent02/>, "nextjs03": <NextjsContent03/>, "nextjs04": <NextjsContent04/>,
+    "javascript01": <JavaScriptContent01 />, "javascript02": <JavaScriptContent02 />, "javascript03": <JavaScriptContent03 />, "javascript04": <JavaScriptContent04 />, "javascript05": <JavaScriptContent05 />,
+    "nodejs01": <NodejsContent01 />, "nodejs02": <NodejsContent02 />, "nodejs03": <NodejsContent03 />, "nodejs04": <NodejsContent04 />,
+    "typescript01": <TypeScriptContent01 />, "typescript02": <TypeScriptContent02 />, "typescript03": <TypeScriptContent03 />, "typescript04": <TypeScriptContent04 />,
+    "react01": <ReactContent01 />, "react02": <ReactContent02 />, "react03": <ReactContent03 />, "react04": <ReactContent04 />, "react05": <ReactContent05 />,
+    "nextjs01": <NextjsContent01 />, "nextjs02": <NextjsContent02 />, "nextjs03": <NextjsContent03 />, "nextjs04": <NextjsContent04 />,
   }
 
-  for(let [key, value] of Object.entries(dict)) {
-    if (content === key){
+  for (let [key, value] of Object.entries(dict)) {
+    if (content === key) {
       return (
         <div className="flex flex-col min-h-screen overflow-hidden">
           {/*  Site header */}
@@ -52,7 +52,7 @@ function Documentation() {
               <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="pt-32 pb-12 md:pt-40 md:pb-20">
                   {/* Main content */}
-                  { value }
+                  {value}
                 </div>
               </div>
             </section>
@@ -64,7 +64,7 @@ function Documentation() {
     }
   }
   return (
-    <PageNotFound/>
+    <PageNotFound />
   )
 }
 
