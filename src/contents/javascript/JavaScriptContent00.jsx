@@ -2,28 +2,13 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function JavaScriptContent04() {
+function JavaScriptContent00() {
   const [sidebarNavOpen, setSidebarNavOpen] = useState(false);
   const [sidebarLinkOpen, setSidebarLinkOpen] = useState(true);
 
   const navigate = useNavigate();
 
-  const code01 = `function add(a, b) {
-  return a + b;
-}`
-  const code02 = `var result = add(1, 2); // 3`
-  const code03 = `var global_var = 10; // グローバルスコープ
-function myFunction() {
-  var local_var = 20; // ローカルスコープ
-}`
-  const code04 = `var a = 10; // グローバルスコープ
-function myFunction() {
-  var b = 20; // ローカルスコープ
-  console.log(a); // グローバルスコープの変数にアクセスできる
-  console.log(b); // ローカルスコープの変数にアクセスできる
-}
-console.log(a); // グローバルスコープの変数にアクセスできる
-console.log(b); // ローカルスコープの変数にアクセスできない`
+  const code01 = `console.log("Hello World"); // Hello World`
 
   return (
     <div className="md:flex md:justify-between" data-sticky-container>
@@ -61,7 +46,12 @@ console.log(b); // ローカルスコープの変数にアクセスできない`
             <ul className="font-medium -my-2">
               {/* 1st level */}
               <li className="py-2">
-                <a className="flex items-center hover:underline" href="/documentation/javascript00">
+                <a
+                  className="flex items-center hover:underline"
+                  href="#0"
+                  onClick={(e) => { e.preventDefault(); setSidebarLinkOpen(!sidebarLinkOpen); }}
+                  aria-expanded={sidebarLinkOpen}
+                >
                   <div className="flex items-center grow">
                     <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="4.5" cy="4.5" r="4.5" />
@@ -70,7 +60,24 @@ console.log(b); // ローカルスコープの変数にアクセスできない`
                     </svg>
                     <span>JavaScriptとは</span>
                   </div>
+                  <svg className="w-3 h-3 fill-current text-gray-400 cursor-pointer ml-1 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z" />
+                  </svg>
                 </a>
+                {/* 2nd level */}
+                <ul
+                  className={`font-normal -mb-1 mt-1 ml-2 pl-5 border-l border-gray-300 ${!sidebarLinkOpen && 'hidden'}`}
+                >
+                  <li className="py-1">
+                    <a className="text-gray-600 hover:underline" href="#born">JavaScriptの誕生</a>
+                  </li>
+                  <li className="py-1">
+                    <a className="text-gray-600 hover:underline" href="#popular">JavaScriptの普及</a>
+                  </li>
+                  <li className="py-1">
+                    <a className="text-gray-600 hover:underline" href="#write">JavaScriptの記述</a>
+                  </li>
+                </ul>
               </li>
               <li className="py-2">
                 <a className="flex items-center hover:underline" href="/documentation/javascript01">
@@ -103,33 +110,14 @@ console.log(b); // ローカルスコープの変数にアクセスできない`
                 </a>
               </li>
               <li className="py-2">
-                <a
-                  className="flex items-center hover:underline"
-                  href="#0"
-                  onClick={(e) => { e.preventDefault(); setSidebarLinkOpen(!sidebarLinkOpen); }}
-                  aria-expanded={sidebarLinkOpen}
-                >
+                <a className="flex items-center hover:underline" href="/documentation/javascript04">
                   <div className="flex items-center grow">
                     <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                       <path d="M13.5 15.414l-2.5-3V1a1 1 0 011-1h3a1 1 0 011 1v11.414l-2.5 3zM7 0H1C.4 0 0 .4 0 1v2h3v2H0v2h3v2H0v2h3v2H0v2c0 .6.4 1 1 1h6c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1z" />
                     </svg>
                     <span>関数、スコープ</span>
                   </div>
-                  <svg className="w-3 h-3 fill-current text-gray-400 cursor-pointer ml-1 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z" />
-                  </svg>
                 </a>
-                {/* 2nd level */}
-                <ul
-                  className={`font-normal -mb-1 mt-1 ml-2 pl-5 border-l border-gray-300 ${!sidebarLinkOpen && 'hidden'}`}
-                >
-                  <li className="py-1">
-                    <a className="text-gray-600 hover:underline" href="#function">関数</a>
-                  </li>
-                  <li className="py-1">
-                    <a className="text-gray-600 hover:underline" href="#scope">スコープ</a>
-                  </li>
-                </ul>
               </li>
             </ul>
           </nav>
@@ -137,47 +125,47 @@ console.log(b); // ローカルスコープの変数にアクセスできない`
       </aside>
       <div className="md:grow">
         <div className="text-lg text-gray-600">
-          <h2 className="h2 text-gray-900 mb-4">関数、スコープ</h2>
+          <h2 className="h2 text-gray-900 mb-4">JavaScriptとは</h2>
           <p className="mb-8">
-            この章では、JavaScriptでの関数の定義方法、呼び出し方、スコープについて学習します。
+            この章では、JavaScriptの起源から簡単な記述について学習します。
           </p>
-          <h3 id="function" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>関数</h3>
+          <h3 id="born" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>JavaScriptの誕生</h3>
           <p className="mb-4">
-            関数とは、特定の処理をまとめて、それを何度も使いまわすことができるようにしたものです。JavaScriptにおいては、以下のようにfunctionを使って関数を宣言します。
+            JavaScriptは、1995年に開発されたウェブブラウザ内で実行できるプログラミング言語です。
+          </p>
+          <p className="mb-4">
+            JavaScriptを使うことで、ウェブページにユーザーの操作に応じて内容が変わるなどの動的な要素を追加し、ユーザーとのインタラクション（相互作用）を可能にします。
+          </p>
+          <h3 id="popular" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>JavaScriptの普及</h3>
+          <p className="mb-4">
+            JavaScriptは、1995年にNetscape社によって開発されました。もともとはLiveScriptという名前でしたが、その後JavaScriptと改名され、今日ではほぼ全てのウェブブラウザでサポートされています。
+          </p>
+          <p className="mb-4">
+            ウェブ開発において必須、多岐の利用が可能、リソースの豊富さなどの理由から、JavaScriptは最も人気のあるプログラミング言語の一つとなっています。
+          </p>
+          <h3 id="write" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>JavaScriptの記述</h3>
+          <p className="mb-4">
+            以下は、JavaScriptで最も有名な記述になります。
           </p>
           <pre className="mb-4">{code01}</pre>
           <p className="mb-4">
-            この場合、addという関数が定義されており、引数としてaとbを取り、それらを足し算した結果をreturn文で返します。関数を呼び出すには、以下のように関数名に引数を渡します。
+            このコードを動かすと、<strong>「Hello World」</strong>というメッセージが出力されます。
           </p>
-          <pre className="mb-12">{code02}</pre>
-          <h3 id="scope" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>スコープ</h3>
-          <p className="mb-4">
-            スコープとは、変数や関数などが有効な範囲のことを表します。JavaScriptにおいては、以下のようにグローバルスコープとローカルスコープがあります。
+          <p className='mb-4'>
+            <strong>console.log</strong>は、JavaScriptで情報を出力するための機能です。この機能を使って、プログラムがどう動いているかを確認したり、問題の原因を探ったりします。
           </p>
-          <ul className="list-disc pl-8 mb-4">
-            <li>グローバルスコープ : 関数の外側で宣言された変数や関数が有効なスコープです。</li>
-            <li>ローカルスコープ : 関数の中で宣言された変数や関数が有効なスコープです。</li>
-          </ul>
-          <p className="mb-4">
-            以下のように、グローバルスコープとローカルスコープを使って変数を宣言することができます。
+          <p className="mb-12">
+            また、<strong>//</strong>は以降の記述をコメントアウトにするということを示し、コメントアウトはコード全体に影響を与えません。コメントアウトには、出力結果や書いたコードの意図などがよく記述されます。
           </p>
-          <pre className="mb-12">{code03}</pre>
-          <p className="mb-4">
-            グローバルスコープで宣言された変数は、どこからでもアクセスできます。一方、ローカルスコープで宣言された変数は、その関数内でしかアクセスできません。
-          </p>
-          <p className="mb-4">
-            以下の例では、setTimeout関数を使って非同期で処理を行っています。この処理は、指定した時間が経過した後に実行されます。
-          </p>
-          <pre className="mb-12">{code04}</pre>
         </div>
 
         {/* Related content */}
         <div className="mt-8">
           <h3 className="h3 mb-8">関連記事</h3>
-          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript03">
+          <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="/documentation/javascript01">
             <div>
-              <div className="text-normal font-medium mb-1">配列、オブジェクト</div>
-              <div className="text-sm text-gray-600">前の章</div>
+              <div className="text-normal font-medium mb-1">変数、データ型、演算子</div>
+              <div className="text-sm text-gray-600">次の章</div>
             </div>
             <svg className="w-4 h-4 fill-current text-blue-600 shrink-0 ml-6" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
               <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
@@ -193,7 +181,7 @@ console.log(b); // ローカルスコープの変数にアクセスできない`
               aria-label="Open Modal"
               type="button"
               className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-              onClick={() => navigate('/trial/04')}>
+              onClick={() => navigate('/trial/00')}>
               問題に挑戦する
             </button>
             <ul className="inline-flex justify-center -m-2">
@@ -245,4 +233,4 @@ console.log(b); // ローカルスコープの変数にアクセスできない`
   );
 }
 
-export default JavaScriptContent04;
+export default JavaScriptContent00;

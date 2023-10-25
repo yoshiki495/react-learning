@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import Header from '../partials/Header';
+import JavaScriptContent00 from '../contents/javascript/JavaScriptContent00';
 import JavaScriptContent01 from '../contents/javascript/JavaScriptContent01';
 import JavaScriptContent02 from '../contents/javascript/JavaScriptContent02';
 import JavaScriptContent03 from '../contents/javascript/JavaScriptContent03';
 import JavaScriptContent04 from '../contents/javascript/JavaScriptContent04';
-import JavaScriptContent05 from '../contents/javascript/JavaScriptContent05';
 import NodejsContent01 from '../contents/nodejs/NodejsContent01';
 import NodejsContent02 from '../contents/nodejs/NodejsContent02';
 import NodejsContent03 from '../contents/nodejs/NodejsContent03';
@@ -33,7 +33,7 @@ function Documentation() {
   const { content } = useParams();
 
   const dict = {
-    "javascript01": <JavaScriptContent01 />, "javascript02": <JavaScriptContent02 />, "javascript03": <JavaScriptContent03 />, "javascript04": <JavaScriptContent04 />, "javascript05": <JavaScriptContent05 />,
+    "javascript00": <JavaScriptContent00 />, "javascript01": <JavaScriptContent01 />, "javascript02": <JavaScriptContent02 />, "javascript03": <JavaScriptContent03 />, "javascript04": <JavaScriptContent04 />,
     "nodejs01": <NodejsContent01 />, "nodejs02": <NodejsContent02 />, "nodejs03": <NodejsContent03 />, "nodejs04": <NodejsContent04 />,
     "typescript01": <TypeScriptContent01 />, "typescript02": <TypeScriptContent02 />, "typescript03": <TypeScriptContent03 />, "typescript04": <TypeScriptContent04 />,
     "react01": <ReactContent01 />, "react02": <ReactContent02 />, "react03": <ReactContent03 />, "react04": <ReactContent04 />, "react05": <ReactContent05 />,

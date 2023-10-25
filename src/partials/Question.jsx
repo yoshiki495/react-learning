@@ -1,6 +1,61 @@
 import * as te from 'tw-elements';
+import { useParams } from 'react-router-dom';
 
-function Question(props) {
+function Question() {
+  const id = useParams().id.replace(/^0/, '');
+  const instructions = [
+    <div data-te-modal-body-ref className="relative p-4" key="1">
+      <p>コンソールに<strong>「JavaScriptの学習を始めよう！」</strong>と出力してください。</p>
+    </div>,
+    <div data-te-modal-body-ref className="relative p-4" key="2">
+      <ol>
+        <li>数値<strong>10</strong>、文字列<strong>"JavaScript"</strong>、真偽値<strong>true</strong>を変数に代入し、コンソールに出力してください。</li>
+        <li>数値<strong>10</strong>と<strong>20</strong>を足した結果をコンソールに出力してください。</li>
+      </ol>
+    </div>,
+    <div data-te-modal-body-ref className="relative p-4" key="3">
+      <ol>
+        <li><strong>0</strong>から<strong>9</strong>までの数字をコンソールに出力するfor文を作成してください。</li>
+        <li>数値<strong>5</strong>が正の数であるかを判定するif文を作成してください。</li>
+      </ol>
+    </div>,
+    <div data-te-modal-body-ref className="relative p-4" key="4">
+      <ol>
+        <li>配列に<strong>1, 2, 3</strong>を代入し、配列の最後に<strong>4</strong>を追加してください。その後、配列の2番目の要素をコンソールに出力してください。</li>
+        <li>オブジェクトに<strong>{'{name: "Alice", age: 20}'}</strong>を代入し、新しいプロパティ<strong>city</strong>を追加してください。その後、<strong>age</strong>プロパティをコンソールに出力してください。</li>
+      </ol>
+    </div>,
+    <div data-te-modal-body-ref className="relative p-4" key="5">
+      <ol>
+        <li>次の仕様を満たす関数<strong>multiply</strong>を定義してください。
+          <ul>
+            <li>引数: 2つの数値</li>
+            <li>戻り値: 引数の数値を掛け算した結果</li>
+          </ul>
+          また、定義した関数を呼び出し、その結果をコンソールに表示してください。
+        </li>
+        <li>以下の要件を満たすコードを書いてください。
+          <ol>
+            <li>グローバルスコープに変数<strong>c</strong>を宣言し、値<strong>30</strong>を代入してください。</li>
+            <li>関数<strong>scopeFunction</strong>を定義してください。
+              <ul>
+                <li>関数内で、ローカルスコープに変数<strong>d</strong>を宣言し、値<strong>40</strong>を代入してください。</li>
+                <li>関数内で、変数<strong>c</strong>と変数<strong>d</strong>の和をコンソールに表示してください。</li>
+              </ul>
+            </li>
+            <li><strong>scopeFunction</strong>を呼び出してください。</li>
+            <li>グローバルスコープから変数<strong>d</strong>にアクセスしようとしてください。何が表示されるか確認してください。</li>
+          </ol>
+        </li>
+      </ol>
+    </div>
+  ];
+
+  const estimatedTime = (
+    <div className="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+      目安時間: 10分
+    </div>
+  );
   return (
     <>
       <button
@@ -9,7 +64,7 @@ function Question(props) {
         data-te-toggle="modal"
         data-te-target="#staticBackdrop"
       >
-        問1
+        問{id}
       </button>
       <div
         data-te-modal-init
@@ -27,7 +82,7 @@ function Question(props) {
           <div className="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none">
             <div className="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
               <h5 className="text-xl font-medium leading-normal text-gray-700" id="exampleModalLabel">
-                問1
+                問{id}
               </h5>
               <button
                 type="button"
@@ -40,23 +95,13 @@ function Question(props) {
                 </svg>
               </button>
             </div>
-            <div data-te-modal-body-ref className="relative p-4">
-              以下の条件を満たすコードを書いてください。
-              <ul className="list-disc pl-6 pt-2 pb-2">
-                <li>変数<strong>num1</strong>と<strong>num2</strong>にそれぞれ数値を代入します。</li>
-                <li>変数<strong>sum</strong>に<strong>num1</strong>と<strong>num2</strong>の和を代入します。</li>
-                <li>変数<strong>diff</strong>に<strong>num1</strong>と<strong>num2</strong>の差を代入します。</li>
-                <li>変数<strong>isGrater</strong>に<strong>num1</strong>が<strong>num2</strong>よりも大きいかどうかの真偽値を代入します。</li>
-              </ul>
-            </div>
-            <div className="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
-              目安時間: 10分
-            </div>
-            </div>
+            {instructions[id]}
+            {estimatedTime}
           </div>
         </div>
-      </>
-    );
-  }
-  
-  export default Question;
+      </div>
+    </>
+  );
+}
+
+export default Question;
