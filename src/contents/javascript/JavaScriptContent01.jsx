@@ -8,23 +8,28 @@ function JavaScriptContent01() {
 
   const navigate = useNavigate();
 
-  const code01 = `var x = 10;
-let y = "Hello";
-const z = true;
-`
+  const code01 = `var x = "Hello";
+console.log(x); // Hello`
 
-  const code02 = `var a = "Hello"; // 文字列型
-var b = 10; // 数値型
-var c = true; // 真偽値型
-var d = [1, 2, 3]; // 配列型
-var e = {name: "Alice", age: 20}; // オブジェクト型`
+  const code02 = `var a = "Hello";
+console.log(typeof a); // 文字列型
+var b = 10;
+console.log(typeof b); // 数値型
+var c = true;
+console.log(typeof c); // 真偽値型
+var d = [1, 2, 3];
+console.log(typeof d); // 配列型
+var e = {name: "Alice", age: 20}; 
+console.log(typeof e); // オブジェクト型`
 
   const code03 = `var a = 10;
 var b = 5;
-var c = a + b; // 加算演算子を使ってaとbを足し算した結果をcに代入する
-var d = a > b; // 大なり演算子を使ってaがbより大きいかどうかを判定し、結果をdに代入する
-var e = true;
-var f = !e; // 否定演算子`
+var c = a + b;
+console.log(c); // 15
+var d = a > b;
+console.log(d); true
+var f = !d;
+console.log(f); false`
 
   return (
     <div className="md:flex md:justify-between" data-sticky-container>
@@ -150,7 +155,7 @@ var f = !e; // 否定演算子`
             変数とは、プログラムで扱うデータを一時的に格納するための入れ物のようなものです。変数には名前をつけて、その名前を使ってデータを取り出すことができます。
           </p>
           <p className="mb-4">
-            変数を宣言するには、<strong>var</strong>、<strong>let</strong>、<strong>const</strong>のいずれかのキーワードを使います。例えば、以下のように変数を宣言することができます。
+            変数を宣言するものの代表として、<strong>var</strong>というものがあります。例えば、以下のように変数を宣言することができます。
           </p>
           <pre className="mb-12">{code01}</pre>
           <h3 id="type" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>データ型</h3>
@@ -165,7 +170,7 @@ var f = !e; // 否定演算子`
             <li>オブジェクト（Object）: 関連するデータをまとめたものです。</li>
           </ul>
           <p className="mb-4">
-            以下のように、変数にデータを代入する際に、そのデータの型が自動的に判定されます。
+            以下のように、変数にデータを代入する際に、そのデータの型が自動的に判定されます。また、対象の変数や値に対して<strong>typeof</strong>を使用することで、そのデータ型を確認することができます。
           </p>
           <pre className="mb-12">{code02}</pre>
           <h3 id="operator" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>演算子</h3>

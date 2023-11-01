@@ -105,7 +105,7 @@ const CodeEditorScreen = () => {
           <div className="w-full bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="p-4 h-full">
               <label htmlFor="output" className="block text-gray-700 font-bold mb-2">
-                Output
+                Console
               </label>
               <div
                 id="output"

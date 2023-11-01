@@ -136,6 +136,16 @@ function JavaScriptContent00() {
           <p className="mb-4">
             JavaScriptを使うことで、ウェブページにユーザーの操作に応じて内容が変わるなどの動的な要素を追加し、ユーザーとのインタラクション（相互作用）を可能にします。
           </p>
+          <p className="mb-4">
+            JavaScriptが可能にするものとして、以下のようなものがあります。
+          </p>
+          <ul className="list-disc pl-8 mb-4">
+            <li>アニメーション</li>
+            <li>入力されたデータの送信</li>
+            <li>キーワードによる検索</li>
+            <li>フィルタリングや並べ替え</li>
+            <li>ポップアップの表示</li>
+          </ul>
           <h3 id="popular" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>JavaScriptの普及</h3>
           <p className="mb-4">
             JavaScriptは、1995年にNetscape社によって開発されました。もともとはLiveScriptという名前でしたが、その後JavaScriptと改名され、今日ではほぼ全てのウェブブラウザでサポートされています。
@@ -145,17 +155,14 @@ function JavaScriptContent00() {
           </p>
           <h3 id="write" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>JavaScriptの記述</h3>
           <p className="mb-4">
-            以下は、JavaScriptで最も有名な記述になります。
+            プログラムとは、コンピューターに何をしてほしいかを伝える一連の命令のことを指します。例えば、計算をしたり、データを保存したりするためには、コンピューターに対して明確な手順を指示する必要があります。この指示や手順のことを「命令」と言い、これらの命令を組み合わせてプログラムが形成されます。プログラムが形成される時、入力（外部の情報）があればその情報を受け取り、処理を行い、出力（結果）を返します。
+          </p>
+          <p className="mb-4">
+            以下は、JavaScriptで最も有名なコード（プログラムはコードと呼ばれるのが一般的で、今後もこの呼び方で進めます。）で、<strong>「Hello World」</strong>というメッセージを出力するものになります。
           </p>
           <pre className="mb-4">{code01}</pre>
-          <p className="mb-4">
-            このコードを動かすと、<strong>「Hello World」</strong>というメッセージが出力されます。
-          </p>
-          <p className='mb-4'>
-            <strong>console.log</strong>は、JavaScriptで情報を出力するための機能です。この機能を使って、プログラムがどう動いているかを確認したり、問題の原因を探ったりします。
-          </p>
-          <p className="mb-12">
-            また、<strong>//</strong>は以降の記述をコメントアウトにするということを示し、コメントアウトはコード全体に影響を与えません。コメントアウトには、出力結果や書いたコードの意図などがよく記述されます。
+          <p className='mb-12'>
+            <strong>console.log</strong>は、JavaScriptで情報を出力するための記述です。プログラムがどう動いているかを確認したり、問題の原因を探ったりするのに頻繁に使用します。また、<strong>//</strong>は以降の記述をコメントアウトにするということを示し、コメントアウトはコード全体に影響を与えません。コメントアウトには、出力結果や書いたコードの意図などがよく記述されます。
           </p>
         </div>
 

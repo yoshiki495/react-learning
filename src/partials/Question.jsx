@@ -9,8 +9,8 @@ function Question() {
     </div>,
     <div data-te-modal-body-ref className="relative p-4" key="2">
       <ol>
-        <li>数値<strong>10</strong>、文字列<strong>"JavaScript"</strong>、真偽値<strong>true</strong>を変数に代入し、コンソールに出力してください。</li>
-        <li>数値<strong>10</strong>と<strong>20</strong>を足した結果をコンソールに出力してください。</li>
+        <li>数値<strong>10</strong>、数値<strong>20</strong>を<strong>num1</strong>、<strong>num2</strong>という名前の変数に代入し、コンソールに出力してください。</li>
+        <li><strong>num1</strong>と<strong>num2</strong>を足したものを<strong>num3</strong>という名前の変数に代入し、コンソールに出力してください。</li>
       </ol>
     </div>,
     <div data-te-modal-body-ref className="relative p-4" key="3">

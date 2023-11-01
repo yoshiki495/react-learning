@@ -11,13 +11,18 @@ function JavaScriptContent03() {
   const code01 = `var array = [1, 2, 3, 4, 5];`
   const code02 = `var array = [1, 2, 3];
 array.push(4); // [1, 2, 3, 4]
-var a = array[1]; // 2
-array[1] = 5; // [1, 5, 3, 4]`
+console.log(array); //  [1, 2, 3, 4]
+var a = array[1];
+array[1] = 5;
+console.log(array) // [1, 5, 3, 4]`
   const code03 = `var obj = {name: "Alice", age: 20};`
   const code04 = `var obj = {name: "Alice", age: 20};
 obj.city = "Tokyo";
-var a = obj.age; // 20
-obj.age = 30;`
+console.log(obj); // {name: "Alice", age: 20, city: "Tokyo};
+var a = obj.age;
+console.log(a); // 20
+obj.age = 30;
+console.log(obj); // {name: "Alice", age: 30, city: "Tokyo}`
 
   return (
     <div className="md:flex md:justify-between" data-sticky-container>
@@ -141,12 +146,15 @@ obj.age = 30;`
           </p>
           <pre className="mb-4">{code01}</pre>
           <p className="mb-4">
+            配列の各要素には、0から始まる順番の番号が付けられており、この番号をインデックスと呼びます。インデックスを利用することで、配列の特定の要素にアクセスしたり、その値を変更することができます。
+          </p>
+          <p className="mb-4">
             配列には、以下のように様々な操作を行うことができます。
           </p>
           <ul className="list-disc pl-8 mb-4">
-            <li>要素の追加 : push()メソッドを使って配列の最後尾に要素を追加することができます。</li>
-            <li>要素の取り出し : []を使ってインデックスを指定することで、配列の特定の要素を取り出すことができます。</li>
-            <li>要素の変更 : []を使ってインデックスを指定することで、配列の特定の要素を変更することができます。</li>
+            <li>要素の追加 : <strong>push</strong>を使って配列の最後尾に要素を追加することができます。</li>
+            <li>要素の取り出し : <strong>[]</strong>を使ってインデックスを指定することで、配列の特定の要素を取り出すことができます。</li>
+            <li>要素の変更 : <strong>[]</strong>を使ってインデックスを指定することで、配列の特定の要素を変更することができます。</li>
           </ul>
           <pre className="mb-12">{code02}</pre>
           <h3 id="object" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>オブジェクト</h3>
@@ -166,7 +174,7 @@ obj.age = 30;`
           </p>
           <pre className="mb-4">{code04}</pre>
           <p className="mb-4">
-            オブジェクトには、配列と異なり、プロパティに名前をつけることができます。そのため、プロパティを使ってより詳細な情報を表現すること
+            オブジェクトには、配列と異なり、プロパティに名前をつけることができます。そのため、プロパティを使ってより詳細な情報を表現することができます。
           </p>
         </div>
 

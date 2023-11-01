@@ -8,15 +8,14 @@ function JavaScriptContent02() {
 
   const navigate = useNavigate();
 
-  const code01 = `
-  var x = 10;
-  if (x > 0) {
-    console.log("xは正の数です");
-  } else if (x < 0) {
-    console.log("xは負の数です");
-  } else {
-    console.log("xは0です");
-  }`;
+  const code01 = `var x = 10;
+if (x > 0) {
+  console.log("xは正の数です");
+} else if (x < 0) {
+  console.log("xは負の数です");
+} else {
+  console.log("xは0です");
+}`;
 
   const code02 = `for (var i = 0; i < 10; i++) {
   console.log(i);
@@ -151,45 +150,29 @@ do {
         <div className="text-lg text-gray-600">
           <h2 className="h2 text-gray-900 mb-4">制御構造</h2>
           <p className="mb-8">
-            この章では、条件分岐（if文、switch文）やループ（for文、while文）などの制御構造について学習します。
+            この章では、条件分岐（<strong>if</strong>、<strong>switch</strong>）やループ（<strong>for</strong>、<strong>while</strong>）などの制御構造について学習します。
           </p>
           <h3 id="if" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>条件分岐</h3>
           <p className="mb-4">
-            条件分岐とは、ある条件が成り立っている場合にだけ特定の処理を行うための構造です。JavaScriptにおいては、if文を使って条件分岐を実現します。
+            条件分岐とは、ある条件が成り立っている場合にだけ特定の処理を行うための構造です。
           </p>
           <p className="mb-4">
-            以下のように、if文を使って条件分岐を行うことができます。
+            JavaScriptにおいては、<strong>if</strong>を使って条件分岐を実現します。以下のように、<strong>if</strong>を使って条件分岐を行うことができます。この場合、xが正の数であるため、<strong>「xは正の数です」</strong>と出力されます。
           </p>
-          <pre className="mb-4">{code01}</pre>
-          <p className="mb-12">
-            この場合、xが正の数である場合には「<strong>x</strong>は正の数です」という文が表示され、負の数である場合には「xは負の数です」という文が表示されます。xが0である場合には、「<strong>x</strong>は0です」という文が表示されます。
-          </p>
-          <h3 id="for" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>ループ（for文）</h3>
+          <pre className="mb-12">{code01}</pre>
+          <h3 id="for" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>ループ</h3>
           <p className="mb-4">
-            ループとは、同じ処理を繰り返し行うための構造です。JavaScriptにおいては、for文を使ってループを実現します。
+            ループとは、同じ処理を繰り返し行うための構造です。
+            JavaScriptにおいては、<strong>for</strong>または<strong>while</strong>を使ってループを実現します。
           </p>
           <p className="mb-4">
-            以下のように、for文を使ってループを行うことができます。
+            以下のように、<strong>for</strong>を使ってループを行うことができます。この場合、<strong>i</strong>が0から9までの値をとり、それぞれに対して<strong>console.log(i)</strong>が実行されます。
           </p>
           <pre className="mb-4">{code02}</pre>
-          <p className="mb-12">
-            この場合、<strong>i</strong>が0から9までの値をとり、それぞれに対して<strong>console.log(i)</strong>が実行されます。
-          </p>
-          <h3 id="while" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>ループ（while文とdo-while文）</h3>
           <p className="mb-4">
-            while文とdo-while文は、for文と同様にループを実現するための構造です。
+            また、以下のように<strong>while</strong>を使って同じようなループを行うことができます。whileは、条件が成り立っている限り繰り返し処理を行うものになります。
           </p>
-          <p className="mb-4">
-            while文は、条件が成り立っている限り繰り返し処理を行います。
-          </p>
-          <pre className="mb-4">{code03}</pre>
-          <p className="mb-4">
-            do-while文は、まず1回だけ処理を行い、その後条件が成り立っている限り繰り返し処理を行います。
-          </p>
-          <pre className="mb-4">{code04}</pre>
-          <p className="mb-12">
-            while文とdo-while文は、for文と比較して柔軟性がありますが、処理の流れが読みにくくなることがあるため、適切な場面で使い分ける必要があります。
-          </p>
+          <pre className="mb-12">{code03}</pre>
         </div>
 
         {/* Related content */}

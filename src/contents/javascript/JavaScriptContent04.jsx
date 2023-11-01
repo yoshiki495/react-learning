@@ -11,19 +11,16 @@ function JavaScriptContent04() {
   const code01 = `function add(a, b) {
   return a + b;
 }`
-  const code02 = `var result = add(1, 2); // 3`
-  const code03 = `var global_var = 10; // グローバルスコープ
+  const code02 = `var result = add(1, 2);
+console.log(result); // 3`
+  const code03 = `var a = 10;
 function myFunction() {
-  var local_var = 20; // ローカルスコープ
-}`
-  const code04 = `var a = 10; // グローバルスコープ
-function myFunction() {
-  var b = 20; // ローカルスコープ
-  console.log(a); // グローバルスコープの変数にアクセスできる
-  console.log(b); // ローカルスコープの変数にアクセスできる
+  var b = 20;
+  console.log(a); // a
+  console.log(b); // b
 }
-console.log(a); // グローバルスコープの変数にアクセスできる
-console.log(b); // ローカルスコープの変数にアクセスできない`
+console.log(a); // a
+console.log(b); // ReferenceError: "b" is not defined`
 
   return (
     <div className="md:flex md:justify-between" data-sticky-container>
@@ -143,11 +140,11 @@ console.log(b); // ローカルスコープの変数にアクセスできない`
           </p>
           <h3 id="function" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>関数</h3>
           <p className="mb-4">
-            関数とは、特定の処理をまとめて、それを何度も使いまわすことができるようにしたものです。JavaScriptにおいては、以下のようにfunctionを使って関数を宣言します。
+            関数とは、特定の処理をまとめて、それを何度も使いまわすことができるようにしたものです。JavaScriptにおいては、以下のように<strong>function</strong>を使って関数を宣言します。
           </p>
           <pre className="mb-4">{code01}</pre>
           <p className="mb-4">
-            この場合、addという関数が定義されており、引数としてaとbを取り、それらを足し算した結果をreturn文で返します。関数を呼び出すには、以下のように関数名に引数を渡します。
+            この場合、<strong>add</strong>という関数が定義されており、引数として<strong>a</strong>と<strong>b</strong>を取り、それらを足し算した結果を<strong>return</strong>で返します。関数を呼び出すには、以下のように関数名に引数を渡します。
           </p>
           <pre className="mb-12">{code02}</pre>
           <h3 id="scope" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>スコープ</h3>
@@ -159,16 +156,9 @@ console.log(b); // ローカルスコープの変数にアクセスできない`
             <li>ローカルスコープ : 関数の中で宣言された変数や関数が有効なスコープです。</li>
           </ul>
           <p className="mb-4">
-            以下のように、グローバルスコープとローカルスコープを使って変数を宣言することができます。
+            以下のように、グローバルスコープで宣言された変数は、どこからでもアクセスできる一方、ローカルスコープで宣言された変数は、その関数内でしかアクセスできません。
           </p>
           <pre className="mb-12">{code03}</pre>
-          <p className="mb-4">
-            グローバルスコープで宣言された変数は、どこからでもアクセスできます。一方、ローカルスコープで宣言された変数は、その関数内でしかアクセスできません。
-          </p>
-          <p className="mb-4">
-            以下の例では、setTimeout関数を使って非同期で処理を行っています。この処理は、指定した時間が経過した後に実行されます。
-          </p>
-          <pre className="mb-12">{code04}</pre>
         </div>
 
         {/* Related content */}

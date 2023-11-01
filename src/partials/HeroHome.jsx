@@ -39,7 +39,7 @@ function HeroHome() {
               <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">AI TutorはAIチューターを搭載したプログラミング学習型プラットフォームです。</p>
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
                 <div>
-                  <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="https://join.slack.com/t/w1687955555-7wv819175/shared_invite/zt-23v7aoi0k-A4vGhRAZij4s83d~omuL0Q">学習を始める</a>
+                  <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="https://join.slack.com/t/w1687955555-7wv819175/shared_invite/zt-26dv0utps-UgVw2gx4texmwAuOPB1Sng">学習を始める</a>
                 </div>
               </div>
             </div>
