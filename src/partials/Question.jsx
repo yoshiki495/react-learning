@@ -15,8 +15,8 @@ function Question() {
     </div>,
     <div data-te-modal-body-ref className="relative p-4" key="3">
       <ol>
-        <li><strong>0</strong>から<strong>9</strong>までの数字をコンソールに出力するfor文を作成してください。</li>
-        <li>数値<strong>5</strong>が正の数であるかを判定するif文を作成してください。</li>
+        <li><strong>0</strong>から<strong>9</strong>までの数字を<strong>for</strong>を使ってコンソールに出力してください。</li>
+        <li>数値<strong>5</strong>が正の数であるかを<strong>if</strong>を使って判定してください。</li>
       </ol>
     </div>,
     <div data-te-modal-body-ref className="relative p-4" key="4">
