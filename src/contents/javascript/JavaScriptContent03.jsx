@@ -13,6 +13,7 @@ function JavaScriptContent03() {
 array.push(4); // [1, 2, 3, 4]
 console.log(array); //  [1, 2, 3, 4]
 var a = array[1];
+console.log(a); // 2
 array[1] = 5;
 console.log(array) // [1, 5, 3, 4]`
   const code03 = `var obj = {name: "Alice", age: 20};`

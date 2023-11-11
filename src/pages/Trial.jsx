@@ -133,7 +133,7 @@ const CodeEditorScreen = () => {
             </div>
           </div>
         </div>
-        <div className="fixed bottom-4 right-52" data-aos="zoom-y-out">
+        {/* <div className="fixed bottom-4 right-52" data-aos="zoom-y-out">
           <button
             type="button"
             data-te-ripple-init
@@ -144,7 +144,7 @@ const CodeEditorScreen = () => {
               質問する
             </a>
           </button>
-        </div>
+        </div> */}
         {/* {showChatButton && ( */}
         <div className="fixed bottom-4 right-4" data-aos="zoom-y-out">
           <button

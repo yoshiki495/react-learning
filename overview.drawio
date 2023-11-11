@@ -1,0 +1,67 @@
+<mxfile host="65bd71144e">
+    <diagram id="JfMTk4QZT6uSCENoUZXJ" name="Page-1">
+        <mxGraphModel dx="1034" dy="788" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="17" value="" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#000000;strokeWidth=2;fontSize=14;fontColor=#000000;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="110" y="150" width="340" height="340" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=2;fontSize=14;fontColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="300" width="200" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="330" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;font size=&quot;1&quot; color=&quot;#000000&quot;&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;React&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="300" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="&lt;ul&gt;&lt;li&gt;&lt;b&gt;学習ページの表示&lt;/b&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="66" y="330" width="144" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;font size=&quot;1&quot; color=&quot;#000000&quot;&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;Firebase Hosting&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="270" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=2;fontSize=14;fontColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="300" width="200" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="340" y="330" width="150" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="&lt;font size=&quot;1&quot; color=&quot;#000000&quot;&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;Node.js&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="300" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="&lt;ul&gt;&lt;li&gt;&lt;b&gt;実行処理&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;レビュー処理&lt;/b&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="328" y="330" width="144" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="&lt;font size=&quot;1&quot; color=&quot;#000000&quot;&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;Firebase Functions&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="345" y="270" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=2;fontSize=14;fontColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="100" width="200" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="130" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="&lt;font size=&quot;1&quot; color=&quot;#000000&quot;&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;Bolt.js&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="100" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="&lt;ul&gt;&lt;li&gt;&lt;b&gt;Slack関連処理&lt;/b&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="196" y="120" width="144" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Local&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="70" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="&lt;ul&gt;&lt;li&gt;&lt;strong&gt;言語&lt;/strong&gt;: TypeScript&lt;/li&gt;&lt;li&gt;&lt;strong&gt;スタイル&lt;/strong&gt;: Tailwind CSS&lt;/li&gt;&lt;li&gt;&lt;strong&gt;エディタ&lt;/strong&gt;: Monaco Editor&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;strokeWidth=2;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="355" width="210" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="&lt;ul&gt;&lt;li&gt;&lt;strong&gt;言語&lt;/strong&gt;: TypeScript&lt;/li&gt;&lt;li&gt;&lt;b&gt;実行ライブラリ:&amp;nbsp;&lt;/b&gt;vm&lt;/li&gt;&lt;li&gt;&lt;strong&gt;AIモデル&lt;/strong&gt;: GPT-3.5&lt;/li&gt;&lt;/ul&gt;" style="text;whiteSpace=wrap;html=1;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="370" width="180" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="&lt;ul&gt;&lt;li&gt;&lt;strong&gt;言語&lt;/strong&gt;: JavaScript&lt;/li&gt;&lt;li&gt;&lt;b&gt;API: &lt;/b&gt;Slack API&lt;/li&gt;&lt;/ul&gt;" style="text;whiteSpace=wrap;html=1;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="150" width="150" height="70" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
